@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<body>
+
+    {% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- ANALYTICS CARDS -->
+<section class="analytics-section">
+
+<div class="analytics-grid">
+
+<div class="analytics-card revenue-card">
+
+<div class="analytics-icon">
+<i class="fa-solid fa-dollar-sign"></i>
+</div>
+
+<div class="analytics-info">
+<h3>$248,920</h3>
+<p>Total Revenue</p>
+<span>
++18% This Month
+</span>
+</div>
+
+</div>
+
+
+<div class="analytics-card orders-card">
+
+<div class="analytics-icon">
+<i class="fa-solid fa-cart-shopping"></i>
+</div>
+
+<div class="analytics-info">
+<h3>8,491</h3>
+<p>Total Orders</p>
+<span>
++12% This Week
+</span>
+</div>
+
+</div>
+
+
+<div class="analytics-card customers-card">
+
+<div class="analytics-icon">
+<i class="fa-solid fa-users"></i>
+</div>
+
+<div class="analytics-info">
+<h3>12,340</h3>
+<p>Customers</p>
+<span>
++24% Growth
+</span>
+</div>
+
+</div>
+
+
+<div class="analytics-card products-card">
+
+<div class="analytics-icon">
+<i class="fa-solid fa-box-open"></i>
+</div>
+
+<div class="analytics-info">
+<h3>1,284</h3>
+<p>Products Listed</p>
+<span>
+48 New Uploads
+</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DASHBOARD GRID -->
+<section class="dashboard-grid">
+
+<!-- SALES OVERVIEW -->
+<div class="dashboard-card sales-chart-card">
+
+<div class="card-header">
+
+<h3>
+Revenue Overview
+</h3>
+
+<select aria-label="Select Revenue Time">
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+<option>Last Year</option>
+</select>
+
+</div>
+
+
+<div class="chart-placeholder">
+
+<div class="chart-bars">
+
+<div class="bar" style="height: 40%;"></div>
+<div class="bar" style="height: 55%;"></div>
+<div class="bar" style="height: 70%;"></div>
+<div class="bar" style="height: 85%;"></div>
+<div class="bar" style="height: 65%;"></div>
+<div class="bar" style="height: 92%;"></div>
+<div class="bar" style="height: 100%;"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- TRAFFIC OVERVIEW -->
+<div class="dashboard-card traffic-card">
+
+<div class="card-header">
+<h3>Traffic Overview</h3>
+</div>
+
+<div class="traffic-stats">
+
+<div class="traffic-item">
+<h4>Organic Search</h4>
+<span>48%</span>
+</div>
+
+<div class="traffic-item">
+<h4>Direct Traffic</h4>
+<span>22%</span>
+</div>
+
+<div class="traffic-item">
+<h4>Social Media</h4>
+<span>18%</span>
+</div>
+
+<div class="traffic-item">
+<h4>Ads & Campaigns</h4>
+<span>12%</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- INVENTORY -->
+<section class="inventory-section">
+
+<div class="section-header">
+
+<h2>
+Inventory Management
+</h2>
+
+<button class="primary-admin-btn">
+<i class="fa-solid fa-plus"></i>
+Upload Product
+</button>
+
+</div>
+
+
+<div class="inventory-table-wrapper">
+
+<table class="inventory-table">
+
+<thead>
+
+<tr>
+<th>Product</th>
+<th>Category</th>
+<th>Stock</th>
+<th>Price</th>
+<th>Status</th>
+<th>Actions</th>
+</tr>
+
+</thead>
+
+
+<tbody>
+
+<tr>
+
+<td class="product-column">
+
+<div class="table-product">
+
+<img src="{{ url_for('static', filename='images/products/headphone.jpg') }}" alt="Product">
+
+<div>
+<h4>Nova X Headphones</h4>
+<p>#NV-1024</p>
+</div>
+
+</div>
+
+</td>
+
+<td>Electronics</td>
+
+<td>124 Units</td>
+
+<td>$249</td>
+
+<td>
+<span class="status in-stock">
+In Stock
+</span>
+</td>
+
+<td>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td class="product-column">
+
+<div class="table-product">
+
+<img src="{{ url_for('static', filename='images/products/watch.jpg') }}" alt="Product">
+
+<div>
+<h4>Nova Smart Watch</h4>
+<p>#NV-2024</p>
+</div>
+
+</div>
+
+</td>
+
+<td>Wearables</td>
+
+<td>32 Units</td>
+
+<td>$189</td>
+
+<td>
+<span class="status low-stock">
+Low Stock
+</span>
+</td>
+
+<td>
+
+<div class="table-actions">
+
+</div>
+
+</td>
+
+</tr>
+
+
+<tr>
+
+<td class="product-column">
+
+<div class="table-product">
+
+<img src="{{ url_for('static', filename='images/products/chair.jpg') }}" alt="Product">
+
+<div>
+<h4>Gaming Chair Elite</h4>
+<p>#NV-3032</p>
+</div>
+
+</div>
+
+</td>
+
+<td>Gaming</td>
+
+<td>0 Units</td>
+
+<td>$329</td>
+
+<td>
+<span class="status out-stock">
+Out Of Stock
+</span>
+</td>
+
+<td>
+
+<div class="table-actions">
+
+
+</div>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<!-- ORDERS & CUSTOMERS -->
+<section class="dashboard-grid secondary-grid">
+
+<!-- RECENT ORDERS -->
+<div class="dashboard-card orders-card-large">
+
+<div class="card-header">
+
+<h3>
+Recent Orders
+</h3>
+
+<a href="#">
+View All
+</a>
+
+</div>
+
+
+<div class="order-list">
+
+<div class="order-item">
+
+<div>
+<h4>#NC-8492</h4>
+<p>Gaming Headset Bundle</p>
+</div>
+
+<div>
+<span class="order-price">$489</span>
+</div>
+
+<div>
+<span class="order-status completed">
+Completed
+</span>
+</div>
+
+</div>
+
+
+<div class="order-item">
+
+<div>
+<h4>#NC-8493</h4>
+<p>Mechanical Keyboard</p>
+</div>
+
+<div>
+<span class="order-price">$129</span>
+</div>
+
+<div>
+<span class="order-status pending">
+Pending
+</span>
+</div>
+
+</div>
+
+
+<div class="order-item">
+
+<div>
+<h4>#NC-8494</h4>
+<p>Nova Smart Watch</p>
+</div>
+
+<div>
+<span class="order-price">$189</span>
+</div>
+
+<div>
+<span class="order-status shipped">
+Shipped
+</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- RECENT CUSTOMERS -->
+<div class="dashboard-card customers-card-large">
+
+<div class="card-header">
+
+<h3>
+Recent Customers
+</h3>
+
+<a href="#">
+View All
+</a>
+
+</div>
+
+
+<div class="customer-list">
+
+<div class="customer-item">
+
+<div class="customer-profile">
+
+<div class="customer-avatar">
+A
+</div>
+
+<div>
+<h4>Alex Morgan</h4>
+<p>Premium Member</p>
+</div>
+
+</div>
+
+<span>
+$2,840
+</span>
+
+</div>
+
+
+<div class="customer-item">
+
+<div class="customer-profile">
+
+<div class="customer-avatar">
+S
+</div>
+
+<div>
+<h4>Sophia Lee</h4>
+<p>Verified Buyer</p>
+</div>
+
+</div>
+
+<span>
+$1,920
+</span>
+
+</div>
+
+
+<div class="customer-item">
+
+<div class="customer-profile">
+
+<div class="customer-avatar">
+J
+</div>
+
+<div>
+<h4>James Carter</h4>
+<p>Enterprise Buyer</p>
+</div>
+
+</div>
+
+<span>
+$4,390
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SALES REPORT -->
+<section class="reports-section">
+
+<div class="section-header">
+
+<h2>
+Monthly Sales Report
+</h2>
+
+<button class="secondary-admin-btn">
+<i class="fa-solid fa-download"></i>
+Export Report
+</button>
+
+</div>
+
+
+<div class="reports-grid">
+
+<div class="report-card">
+
+<i class="fa-solid fa-chart-column"></i>
+
+<h3>
+Revenue Performance
+</h3>
+
+<p>
+Strong upward revenue movement across all premium product categories.
+</p>
+
+</div>
+
+
+<div class="report-card">
+
+<i class="fa-solid fa-user-group"></i>
+
+<h3>
+Customer Growth
+</h3>
+
+<p>
+New customer acquisition increased by 28% this quarter.
+</p>
+
+</div>
+
+
+<div class="report-card">
+
+<i class="fa-solid fa-globe"></i>
+
+<h3>
+Global Reach
+</h3>
+
+<p>
+Orders now shipping to over 40+ international regions.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+
+{% endblock %}
+</body>
+</html>

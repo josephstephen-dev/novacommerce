@@ -1,0 +1,369 @@
+<!doctype html>
+
+<html lang="en">
+
+<body>
+{% extends "base.html" %}
+
+
+{% block styles %}
+
+<link rel="stylesheet"
+
+href="{{ url_for('static', filename='css/home.css') }}">
+
+{% endblock %}
+{% block content %}
+
+<!-- PAGE HERO -->
+<section class="category-hero kitchen-hero">
+
+<div class="category-hero-content">
+
+<span class="hero-badge">
+SMART KITCHEN COLLECTION
+</span>
+
+<h1>
+Transform Your Kitchen Into A Modern Culinary Space
+</h1>
+
+<p>
+Discover premium cookware, intelligent appliances, elegant dining collections, and chef-level accessories built for modern homes.
+</p>
+
+<div class="hero-buttons">
+<a href="{{ url_for('kitchen') }}" class="primary-btn">
+Shop Kitchen Essentials
+</a>
+
+<a href="{{ url_for('deals') }}" class="secondary-btn">
+View Offers
+</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUICK CATEGORIES -->
+<section class="quick-categories-section">
+
+<div class="section-title">
+<h2>Kitchen Categories</h2>
+<a href="{{ url_for('products') }}">Explore All</a>
+</div>
+
+<div class="quick-categories-grid">
+
+<div class="quick-category-card">
+<i class="fa-solid fa-blender"></i>
+<h3>Appliances</h3>
+<p>Smart modern kitchen devices</p>
+</div>
+
+<div class="quick-category-card">
+<i class="fa-solid fa-fire-burner"></i>
+<h3>Cookware</h3>
+<p>Premium chef-grade cookware</p>
+</div>
+
+<div class="quick-category-card">
+<i class="fa-solid fa-mug-hot"></i>
+<h3>Coffee</h3>
+<p>Brewers and espresso systems</p>
+</div>
+
+<div class="quick-category-card">
+<i class="fa-solid fa-bowl-food"></i>
+<h3>Dining</h3>
+<p>Elegant modern tableware</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURED PRODUCTS -->
+<section class="products-page-section" id="kitchenProducts">
+
+<div class="section-title">
+<h2>Featured Kitchen Products</h2>
+<a href="{{ url_for('cart') }}">Go To Cart</a>
+</div>
+
+<div class="products-grid-page">
+
+
+<!-- PRODUCT -->
+<div class="product-page-card">
+
+<div class="product-image-wrap">
+<img src="{{ url_for('static', filename='images/products/airfryer.jpg') }}" alt="Air Fryer">
+
+<span class="sale-badge">-25%</span>
+</div>
+
+<div class="product-page-content">
+<span class="product-category">Kitchen Appliances</span>
+
+<h3>Nova Smart Air Fryer</h3>
+
+<p>
+Oil-free smart cooking with digital controls and rapid heat technology.
+</p>
+
+<div class="product-rating">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+<span>(642)</span>
+</div>
+
+<div class="product-price-row">
+<h4>$189</h4>
+<small>$249</small>
+</div>
+
+<div class="product-buttons-row">
+<a href="{{ url_for('product_details') }}" class="details-btn">
+Details
+</a>
+
+<button class="cart-add-btn">
+Add To Cart
+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- PRODUCT -->
+<div class="product-page-card">
+
+<div class="product-image-wrap">
+<img src="{{ url_for('static', filename='images/products/coffee-machine.jpg') }}" alt="Coffee Machine">
+
+<span class="sale-badge">Top Rated</span>
+</div>
+
+<div class="product-page-content">
+<span class="product-category">Coffee Essentials</span>
+
+<h3>Barista Espresso Machine</h3>
+
+<p>
+Professional espresso system with precision brewing and milk frother.
+</p>
+
+<div class="product-rating">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<span>(901)</span>
+</div>
+
+<div class="product-price-row">
+<h4>$420</h4>
+<small>$499</small>
+</div>
+
+<div class="product-buttons-row">
+<a href="{{ url_for('product_details') }}" class="details-btn">
+Details
+</a>
+
+<button class="cart-add-btn">
+Add To Cart
+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- PRODUCT -->
+<div class="product-page-card">
+
+<div class="product-image-wrap">
+<img src="{{ url_for('static', filename='images/products/cookware.jpg') }}" alt="Cookware Set">
+
+<span class="sale-badge">Chef Choice</span>
+</div>
+
+<div class="product-page-content">
+<span class="product-category">Cookware</span>
+
+<h3>Premium Nonstick Cookware Set</h3>
+
+<p>
+Elegant multi-piece cookware collection designed for modern kitchens.
+</p>
+
+<div class="product-rating">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-regular fa-star"></i>
+<span>(517)</span>
+</div>
+
+<div class="product-price-row">
+<h4>$310</h4>
+<small>$399</small>
+</div>
+
+<div class="product-buttons-row">
+<a href="{{ url_for('product_details') }}" class="details-btn">
+Details
+</a>
+
+<button class="cart-add-btn">
+Add To Cart
+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- PRODUCT -->
+<div class="product-page-card">
+
+<div class="product-image-wrap">
+<img src="{{ url_for('static', filename='images/products/dining-set.jpg') }}" alt="Dining Set">
+
+<span class="sale-badge">New</span>
+</div>
+
+<div class="product-page-content">
+<span class="product-category">Dining</span>
+
+<h3>Luxury Dining Collection</h3>
+
+<p>
+Minimal modern dining plates and serving essentials for elegant homes.
+</p>
+
+<div class="product-rating">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+<span>(381)</span>
+</div>
+
+<div class="product-price-row">
+<h4>$145</h4>
+<small>$199</small>
+</div>
+
+<div class="product-buttons-row">
+<a href="{{ url_for('product_details') }}" class="details-btn">
+Details
+</a>
+
+<button class="cart-add-btn">
+Add To Cart
+</button>
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FEATURE BANNER -->
+<section class="gaming-feature-banner kitchen-banner">
+<div class="gaming-banner-overlay">
+
+<h2>
+Upgrade Your Kitchen Experience
+</h2>
+
+<p>
+Smart technology, luxury dining, and chef-inspired appliances designed for modern living.
+</p>
+
+<a href="{{ url_for('products') }}">
+Explore Marketplace
+</a>
+
+</div>
+</section>
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+
+<div class="newsletter-content">
+<h2>Join The Nova Kitchen Community</h2>
+<p>
+Receive premium kitchen inspirations, product launches, and exclusive offers.
+</p>
+
+<form>
+<input type="email" placeholder="Enter your email">
+<button type="submit">Subscribe</button>
+</form>
+</div>
+
+</section>
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+<h3>Your Cart</h3>
+</div>
+
+<div class="cart-items">
+
+<div class="cart-item">
+<img src="{{ url_for('static', filename='images/products/airfryer.jpg') }}" alt="Air Fryer">
+<div>
+<h4>Nova Smart Air Fryer</h4>
+<p>$189</p>
+</div>
+</div>
+
+<div class="cart-item">
+<img src="{{ url_for('static', filename='images/products/cookware.jpg') }}" alt="Cookware">
+<div>
+<h4>Cookware Set</h4>
+<p>$310</p>
+</div>
+</div>
+
+</div>
+
+<div class="cart-footer">
+<h4>Total: $499</h4>
+<a href="{{ url_for('cart') }}">Checkout</a>
+</div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/products.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

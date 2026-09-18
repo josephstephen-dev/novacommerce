@@ -1,0 +1,486 @@
+<!doctype html>
+
+<html lang="en">
+
+<body>
+{% extends "base.html" %}
+
+
+{% block styles %}
+
+<link rel="stylesheet"
+
+href="{{ url_for('static', filename='css/home.css') }}">
+
+{% endblock %}
+{% block content %}
+
+
+
+
+<!-- HERO -->
+<section class="category-hero mobiles-hero">
+
+<div class="category-hero-overlay">
+
+<div class="hero-badge">
+NEXT GEN MOBILE TECH
+</div>
+
+<h1>
+Smart Devices Built For The Future
+</h1>
+
+<p>
+Explore flagship smartphones, premium tablets, foldables, smartwatches and cutting-edge mobile accessories.
+</p>
+
+<div class="hero-buttons">
+
+<a href="{{ url_for('mobiles') }}" class="primary-btn">
+Browse Mobiles
+</a>
+
+<a href="{{ url_for('deals') }}" class="secondary-btn">
+Mobile Deals
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- MOBILE BRANDS -->
+<section class="brands-section">
+
+<div class="section-title">
+<h2>Top Mobile Brands</h2>
+<a href="{{ url_for('brands') }}">View All</a>
+</div>
+
+<div class="brands-grid">
+
+<div class="brand-card">
+<i class="fa-brands fa-apple"></i>
+<h3>Apple</h3>
+<p>Luxury performance devices</p>
+</div>
+
+<div class="brand-card">
+<i class="fa-solid fa-mobile-screen"></i>
+<h3>Samsung</h3>
+<p>Foldables & flagship innovation</p>
+</div>
+
+<div class="brand-card">
+<i class="fa-solid fa-microchip"></i>
+<h3>Google Pixel</h3>
+<p>AI-powered smartphones</p>
+</div>
+
+<div class="brand-card">
+<i class="fa-solid fa-bolt"></i>
+<h3>OnePlus</h3>
+<p>Speed & gaming excellence</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- PRODUCTS -->
+<section class="products-section" id="mobile-products">
+
+<div class="section-title">
+<h2>Featured Mobile Devices</h2>
+
+<div class="product-controls">
+
+<select class="sort-mobiles">
+<option>Sort By</option>
+<option>Latest</option>
+<option>Top Rated</option>
+<option>Price Low-High</option>
+<option>Price High-Low</option>
+</select>
+
+<button>
+<i class="fa-solid fa-sliders"></i>
+Filters
+</button>
+
+</div>
+
+</div>
+
+
+
+<div class="products-grid">
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/phone1.jpg') }}" alt="Smartphone">
+
+<span class="product-tag">
+Flagship
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Smartphone
+</div>
+
+<h3>
+Nova Ultra X Pro
+</h3>
+
+<p>
+6.9-inch AMOLED display with advanced AI camera system.
+</p>
+
+<div class="rating-row">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+</div>
+
+<span>(4.8)</span>
+
+</div>
+
+<div class="price-row">
+<h4>$1,299</h4>
+<small>$1,599</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/tablet.jpg') }}" alt="Tablet">
+
+<span class="product-tag">
+Tablet
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Tablet
+</div>
+
+<h3>
+Nova Tab Air
+</h3>
+
+<p>
+Ultra-slim productivity tablet for creators and professionals.
+</p>
+
+<div class="rating-row">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+
+<span>(5.0)</span>
+
+</div>
+
+<div class="price-row">
+<h4>$899</h4>
+<small>$1,099</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/watch.jpg') }}" alt="Smartwatch">
+
+
+<span class="product-tag">
+Wearable
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Smartwatch
+</div>
+
+<h3>
+Nova Watch Elite
+</h3>
+
+<p>
+Premium smartwatch with health monitoring & AI assistant.
+</p>
+
+<div class="rating-row">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+
+<span>(4.9)</span>
+
+</div>
+
+<div class="price-row">
+<h4>$399</h4>
+<small>$520</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/earbuds.jpg') }}" alt="Earbuds">
+
+<span class="product-tag">
+Audio
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Accessories
+</div>
+
+<h3>
+Nova AirPods Max
+</h3>
+
+<p>
+Noise-cancelling premium wireless earbuds.
+</p>
+
+<div class="rating-row">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+</div>
+
+<span>(4.7)</span>
+
+</div>
+
+<div class="price-row">
+<h4>$199</h4>
+<small>$280</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+
+<!-- FEATURES -->
+<section class="features-section">
+
+<div class="feature-box">
+<i class="fa-solid fa-truck-fast"></i>
+<h3>Express Shipping</h3>
+<p>
+Fast global mobile delivery network.
+</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-shield"></i>
+<h3>Secure Warranty</h3>
+<p>
+Extended protection on premium devices.
+</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-rotate"></i>
+<h3>Easy Returns</h3>
+<p>
+Simple return process for all products.
+</p>
+</div>
+
+<div class="feature-box">
+<i class="fa-solid fa-headset"></i>
+<h3>24/7 Support</h3>
+<p>
+Dedicated technical support system.
+</p>
+</div>
+
+</section>
+
+
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+
+<div class="newsletter-content">
+
+<h2>
+Stay Updated On Mobile Innovation
+</h2>
+
+<p>
+Get alerts on flagship launches, flash sales and exclusive tech offers.
+</p>
+
+<form>
+
+<input 
+type="email" 
+placeholder="Enter your email address"
+>
+
+<button type="submit">
+Subscribe
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+
+<h3>Your Cart</h3>
+
+</div>
+
+
+
+<div class="cart-items">
+
+<div class="cart-item">
+
+<img src="{{ url_for('static', filename='images/products/phone1.jpg') }}" alt="phone">
+
+<div>
+<h4>Nova Ultra X Pro</h4>
+<p>$1,299</p>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="cart-footer">
+
+<h4>Total: $1,299</h4>
+
+<a href="{{ url_for('cart') }}">
+Checkout
+</a>
+
+</div>
+
+</div>
+
+
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/products.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

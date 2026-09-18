@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if title %}
+        <title>{{ title }} - Nova Commerce</title>
+    {% else %}
+        <title>Welcome to Nova Commerce</title>
+    {% endif %}
+
+    <!-- Global CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/global.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/responsive.css') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+
+    <!-- Page-specific CSS goes here -->
+    {% block styles %}
+    {% endblock %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+  {% if not hide_nav %}
+
+<header>
+
+<div class="header-top">
+
+<a href="{{ url_for('index') }}" class="brand-logo">
+<div class="logo-icon"><img src="{{ url_for('static', filename='images/logo/nova-logo.png') }}" alt="Logo"></div>
+<div>
+<h2>Nova</h2>
+<p>Modern Marketplace</p>
+</div>
+
+</a>
+
+<div class="search-container">
+
+<div class="search-category">
+<label for="category-select" class="sr-only">Select Category</label>
+<select id="category-select" aria-label="Select Category">
+<option>All</option>
+<option>Gaming</option>
+<option>Electronics</option>
+<option>Fashion</option>
+<option>Beauty</option>
+<option>Kitchen</option>
+</select>
+</div>
+
+<input type="text" placeholder="Search products, brands, categories...">
+
+</div>
+
+
+<div class="header-actions">
+
+<div class="dropdown language-dropdown">
+<button>
+<i class="fa-solid fa-globe"></i>
+EN
+</button>
+
+<div class="dropdown-content">
+    <a href="#">English</a>
+    <a href="#">French</a>
+    <a href="#">Spanish</a>
+    <a href="#">German</a>
+</div>
+</div>
+
+
+<div class="dropdown account-dropdown">
+<button>
+<i class="fa-regular fa-user"></i>
+Account
+</button>
+
+<div class="dropdown-content account-panel">
+<a href="{{ url_for('admin') }}">Admin Dashboard</a>
+<a href="{{ url_for('cart') }}">Orders</a>
+<a href="{{ url_for('wishlist') }}">Wishlist</a>
+<a href="{{ url_for('support') }}">Support</a>
+</div>
+</div>
+
+
+<button class="theme-toggle" id="themeToggle">
+<i class="fa-solid fa-moon"></i>
+Theme
+</button>
+
+
+<button class="cart-btn" id="cartBtn">
+<i class="fa-solid fa-cart-shopping"></i>
+Cart
+<span>2</span>
+</button>
+
+</div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+<nav class="main-nav">
+
+<div class="menu-btn" id="menuBtn">
+    ☰
+  </div>
+
+  <!-- OVERLAY -->
+<div class="sidebar-overlay" id="overlay"></div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+  <div class="sidebar-top">
+    <h2>Hello, Sign In</h2>
+
+    <button class="close-btn" id="closeBtn">
+      ✕
+    </button>
+  </div>
+
+  <div class="sidebar-content">
+
+    <div class="sidebar-section">
+      <h3>Digital Content & Devices</h3>
+
+      <a href="#">Prime Video</a>
+      <a href="#">Amazon Music</a>
+      <a href="#">Kindle E-readers</a>
+      <a href="#">Amazon Appstore</a>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Shop by Department</h3>
+
+      <a href="{{ url_for('electronics') }}">Electronics</a>
+      <a href="{{ url_for('electronics') }}">Computers</a>
+      <a href="{{ url_for('fashion') }}">Fashion</a>
+      <a href="{{ url_for('gaming') }}">Gaming</a>
+      <a href="{{ url_for('beauty') }}">Beauty</a>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Programs & Features</h3>
+
+      <a href="{{ url_for('giftcards') }}">Gift Cards</a>
+      <a href="{{ url_for('live') }}">Live Shopping</a>
+      <a href="{{ url_for('support') }}">Customer Service</a>
+    </div>
+
+  </div>
+
+</div>
+
+<a href="{{ url_for('index') }}">Home</a>
+<a href="{{ url_for('products') }}">Products</a>
+<a href="{{ url_for('deals') }}">Today's Deals</a>
+<a href="{{ url_for('gaming') }}">Gaming</a>
+<a href="{{ url_for('fashion') }}">Fashion</a>
+<a href="{{ url_for('electronics') }}">Electronics</a>
+<a href="{{ url_for('beauty') }}">Beauty</a>
+<a href="{{ url_for('kitchen') }}">Kitchen</a>
+<a href="{{ url_for('books') }}">Books</a>
+<a href="{{ url_for('mobiles') }}">Mobiles</a>
+
+</nav>
+
+</header>
+{% endif %}
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+<!--The part that collect other html doc and render-->
+
+{% block content %}
+
+
+{% endblock %}
+
+    </body>
+
+
+{% if not hide_nav %}
+    <!-- FOOTER -->
+<footer class="main-footer">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>Nova Commerce</h3>
+
+<p>
+Modern enterprise e-commerce ecosystem delivering premium digital shopping experiences.
+</p>
+
+</div>
+
+
+
+
+<div>
+
+<h4>Marketplace</h4>
+
+<a href="{{ url_for('products') }}">Products</a>
+<a href="{{ url_for('deals') }}">Deals</a>
+<a href="{{ url_for('mobiles') }}">Mobiles</a>
+<a href="{{ url_for('electronics') }}">Electronics</a>
+
+</div>
+
+
+
+
+<div>
+
+<h4>Company</h4>
+
+<a href="{{ url_for('about') }}">About Us</a>
+<a href="{{ url_for('careers') }}">Careers</a>
+<a href="{{ url_for('investors') }}">Investors</a>
+<a href="{{ url_for('partners') }}">Partners</a>
+
+</div>
+
+
+
+
+<div>
+
+<h4>Support</h4>
+
+<a href="{{ url_for('support') }}">Help Center</a>
+<a href="{{ url_for('shipping') }}">Shipping</a>
+<a href="{{ url_for('returns') }}">Returns</a>
+<a href="{{ url_for('privacy') }}">Privacy Policy</a>
+
+</div>
+
+</div>
+
+
+
+<div class="footer-bottom">
+
+<p>
+© 2025 Nova Commerce. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+
+{% endif %}
+
+</html>

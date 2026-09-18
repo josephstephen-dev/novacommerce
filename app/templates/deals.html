@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="en">
+<body>
+
+    {% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<!-- HERO -->
+<section class="category-hero deals-hero">
+
+<div class="category-hero-overlay">
+
+<div class="hero-badge">
+LIMITED TIME OFFERS
+</div>
+
+<h1>
+Massive Savings Across Every Category
+</h1>
+
+<p>
+Unlock exclusive flash sales, premium discounts and enterprise-level shopping experiences.
+</p>
+
+<div class="hero-buttons">
+
+<a href="{{ url_for('deals') }}" class="primary-btn">
+Explore Deals
+</a>
+
+<a href="{{ url_for('products') }}" class="secondary-btn">
+Browse Marketplace
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- COUNTDOWN -->
+<section class="countdown-section">
+
+<div class="countdown-container">
+
+<div class="countdown-left">
+
+<h2>Flash Sale Ends In</h2>
+
+<p>
+Grab premium products before the offers expire.
+</p>
+
+</div>
+
+
+<div class="countdown-timer">
+
+<div class="time-box">
+<h3>08</h3>
+<span>Hours</span>
+</div>
+
+<div class="time-box">
+<h3>42</h3>
+<span>Minutes</span>
+</div>
+
+<div class="time-box">
+<h3>18</h3>
+<span>Seconds</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- DEAL CATEGORIES -->
+<section class="categories-section">
+
+<div class="section-title">
+<h2>Top Deal Categories</h2>
+<a href="{{ url_for('products') }}">View All</a>
+</div>
+
+<div class="categories-grid">
+
+<a href="{{ url_for('gaming') }}" class="category-card gaming-card">
+<h3>Gaming Deals</h3>
+<p>Consoles, RGB gear & esports setups</p>
+</a>
+
+<a href="{{ url_for('electronics') }}" class="category-card electronics-card">
+<h3>Electronics Deals</h3>
+<p>Smart devices & premium gadgets</p>
+</a>
+
+<a href="{{ url_for('fashion') }}" class="category-card fashion-card">
+<h3>Fashion Deals</h3>
+<p>Luxury street wear collections</p>
+</a>
+
+<a href="{{ url_for('mobiles') }}" class="category-card beauty-card">
+<h3>Mobile Deals</h3>
+<p>Flagship smartphones & accessories</p>
+</a>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- PRODUCTS -->
+<section class="products-section" id="deals-products">
+
+<div class="section-title">
+
+<h2>Today's Hot Deals</h2>
+
+<div class="product-controls">
+
+<select name="sort-deals">
+<option>Sort Deals</option>
+<option>Biggest Discount</option>
+<option>Most Popular</option>
+<option>Newest Deals</option>
+<option>Price Low-High</option>
+</select>
+
+<button>
+<i class="fa-solid fa-fire"></i>
+Trending
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="products-grid">
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/headphone.jpg') }}" alt="Headphones">
+
+<span class="sale-tag">
+-60%
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Audio
+</div>
+
+<h3>
+Nova X Headphones
+</h3>
+
+<p>
+Premium immersive wireless audio system.
+</p>
+
+<div class="rating-row">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+</div>
+
+<span>(4.8)</span>
+
+</div>
+
+<div class="price-row">
+<h4>$129</h4>
+<small>$329</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/keyboard.jpg') }}" alt="Keyboard">
+
+<span class="sale-tag">
+-45%
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Gaming
+</div>
+
+<h3>
+Mechanical RGB Keyboard
+</h3>
+
+<p>
+Ultra-fast gaming keyboard with RGB lighting.
+</p>
+
+<div class="rating-row">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+
+<span>(5.0)</span>
+
+</div>
+
+<div class="price-row">
+<h4>$89</h4>
+<small>$159</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/watch.jpg') }}" alt="Watch">
+
+<span class="sale-tag">
+-35%
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Wearables
+</div>
+
+<h3>
+Nova Smart Watch
+</h3>
+
+<p>
+AI-powered fitness and productivity smartwatch.
+</p>
+
+<div class="rating-row">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+</div>
+
+<span>(4.7)</span>
+
+</div>
+
+<div class="price-row">
+<h4>$159</h4>
+<small>$249</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/chair.jpg') }}" alt="Gaming Chair">
+
+<span class="sale-tag">
+-50%
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Furniture
+</div>
+
+<h3>
+Nova Gaming Chair
+</h3>
+
+<p>
+Luxury ergonomic chair built for elite gamers.
+</p>
+
+<div class="rating-row">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+
+<span>(5.0)</span>
+
+</div>
+
+<div class="price-row">
+<h4>$189</h4>
+<small>$379</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/phone1.jpg') }}" alt="Phone">
+
+<span class="sale-tag">
+-30%
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Mobiles
+</div>
+
+<h3>
+Nova Ultra X Pro
+</h3>
+
+<p>
+Flagship smartphone with futuristic AI camera.
+</p>
+
+<div class="rating-row">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+</div>
+
+<span>(4.9)</span>
+
+</div>
+
+<div class="price-row">
+<h4>$999</h4>
+<small>$1,399</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/fashion1.jpg') }}" alt="Fashion">
+
+<span class="sale-tag">
+-40%
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Fashion
+</div>
+
+<h3>
+Urban Street wear Jacket
+</h3>
+
+<p>
+Premium designer street wear collection.
+</p>
+
+<div class="rating-row">
+
+<div class="stars">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+</div>
+
+<span>(5.0)</span>
+
+</div>
+
+<div class="price-row">
+<h4>$79</h4>
+<small>$140</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- DEALS BANNER -->
+<section class="featured-banner">
+
+<div class="featured-overlay">
+
+<h2>
+Premium Flash Sale Experience
+</h2>
+
+<p>
+Unlock limited-time enterprise deals designed for modern shoppers.
+</p>
+
+<a href="{{ url_for('products') }}">
+Explore Marketplace
+</a>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+
+<div class="newsletter-content">
+
+<h2>
+Never Miss A Deal
+</h2>
+
+<p>
+Subscribe for early access to flash sales and premium offers.
+</p>
+
+<form>
+
+<input 
+type="email" 
+placeholder="Enter your email"
+>
+
+<button type="submit">
+Subscribe
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+
+<h3>Your Cart</h3>
+
+</div>
+
+
+
+<div class="cart-items">
+
+<div class="cart-item">
+
+<img src="{{ url_for('static', filename='images/products/headphone.jpg') }}" alt="item">
+
+<div>
+<h4>Nova X Headphones</h4>
+<p>$129</p>
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="cart-footer">
+
+<h4>Total: $129</h4>
+
+<a href="{{ url_for('cart') }}">
+Checkout
+</a>
+
+</div>
+
+</div>
+
+
+
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/products.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

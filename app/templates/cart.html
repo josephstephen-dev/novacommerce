@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<body>
+
+    {% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- PAGE HERO -->
+<section class="category-hero cart-hero">
+
+<div class="category-hero-overlay">
+
+<div class="hero-badge">
+SECURE CHECKOUT EXPERIENCE
+</div>
+
+<h1>
+Your Shopping Cart
+</h1>
+
+<p>
+Review your premium products, update quantities and continue to secure checkout.
+</p>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- CART SECTION -->
+<section class="cart-page-section">
+
+<div class="cart-layout">
+
+
+
+
+<!-- LEFT -->
+<div class="cart-products-area">
+
+
+
+
+<!-- CART HEADER -->
+<div class="cart-page-header">
+
+<h2>
+Cart Items
+</h2>
+
+<p>
+3 Premium Products Selected
+</p>
+
+</div>
+
+
+
+
+
+
+<!-- CART ITEM -->
+<div class="cart-product-card">
+
+<div class="cart-product-image">
+<img src="{{ url_for('static', filename='images/products/headphone.jpg') }}" alt="Headphones">
+</div>
+
+<div class="cart-product-info">
+
+<div class="cart-product-top">
+
+<div>
+
+<span class="cart-category">
+Audio
+</span>
+
+<h3>
+Nova X Headphones
+</h3>
+
+<p>
+Immersive premium wireless sound system with advanced noise cancellation.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="cart-product-meta">
+
+<div class="stock-badge in-stock">
+In Stock
+</div>
+
+<div class="delivery-info">
+<i class="fa-solid fa-truck-fast"></i>
+Free Express Delivery
+</div>
+
+</div>
+
+
+
+
+<div class="cart-bottom-row">
+
+
+
+<div class="price-details">
+
+<h4>$129</h4>
+<small>$249</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- CART ITEM -->
+<div class="cart-product-card">
+
+<div class="cart-product-image">
+<img src="{{ url_for('static', filename='images/products/watch.jpg') }}" alt="Watch">
+</div>
+
+<div class="cart-product-info">
+
+<div class="cart-product-top">
+
+<div>
+
+<span class="cart-category">
+Wearables
+</span>
+
+<h3>
+Nova Smart Watch
+</h3>
+
+<p>
+AI-powered smartwatch built for fitness and productivity.
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="cart-product-meta">
+
+<div class="stock-badge in-stock">
+In Stock
+</div>
+
+<div class="delivery-info">
+<i class="fa-solid fa-shield"></i>
+Protected Warranty
+</div>
+
+</div>
+
+
+
+
+<div class="cart-bottom-row">
+
+<div class="price-details">
+
+<h4>$159</h4>
+<small>$310</small>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<!-- CONTINUE SHOPPING -->
+<div class="continue-shopping-row">
+
+<a href="{{ url_for('products') }}" class="secondary-btn">
+<i class="fa-solid fa-arrow-left"></i>
+Continue Shopping
+</a>
+
+<a href="{{ url_for('deals') }}" class="primary-btn">
+View More Deals
+</a>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- RIGHT -->
+<aside class="cart-summary-card">
+
+<div class="summary-header">
+
+<h2>
+Order Summary
+</h2>
+
+<p>
+Secure encrypted checkout
+</p>
+
+</div>
+
+
+
+
+
+
+<!-- SUMMARY -->
+<div class="summary-details">
+
+<div class="summary-row">
+<span>Subtotal</span>
+<strong>$447</strong>
+</div>
+
+<div class="summary-row">
+<span>Shipping</span>
+<strong>Free</strong>
+</div>
+
+<div class="summary-row">
+<span>Tax</span>
+<strong>$22</strong>
+</div>
+
+<div class="summary-row">
+<span>Discount</span>
+<strong class="discount-price">
+-$40
+</strong>
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- PROMO -->
+<div class="promo-box">
+
+<label for="promo-code">
+Promo Code
+</label>
+
+<div class="promo-input">
+
+<input 
+type="text" 
+id="promo-code"
+placeholder="Enter promo code"
+>
+
+<button>
+Apply
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- TOTAL -->
+<div class="total-box">
+
+<div class="summary-row total-row">
+
+<span>Total</span>
+
+<h2>$429</h2>
+
+</div>
+
+<p>
+Including VAT and express delivery
+</p>
+
+</div>
+
+
+
+
+
+
+<!-- BUTTONS -->
+<div class="checkout-buttons">
+
+<button class="checkout-btn">
+<i class="fa-solid fa-lock"></i>
+Proceed To Checkout
+</button>
+
+<button class="paypal-btn">
+<i class="fa-brands fa-paypal"></i>
+Pay With PayPal
+</button>
+
+</div>
+
+
+
+
+
+
+<!-- PAYMENT -->
+<div class="payment-methods">
+
+<p>
+Accepted Payments
+</p>
+
+<div class="payment-icons">
+
+<i class="fa-brands fa-cc-visa"></i>
+<i class="fa-brands fa-cc-mastercard"></i>
+<i class="fa-brands fa-cc-paypal"></i>
+<i class="fa-brands fa-cc-stripe"></i>
+
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- SECURITY -->
+<div class="cart-security">
+
+<div class="security-item">
+
+<i class="fa-solid fa-shield"></i>
+
+<div>
+<h4>Secure Payment</h4>
+<p>Enterprise-grade encrypted checkout.</p>
+</div>
+
+</div>
+
+
+
+<div class="security-item">
+
+<i class="fa-solid fa-rotate-left"></i>
+
+<div>
+<h4>Easy Returns</h4>
+<p>Simple 30-day return policy.</p>
+</div>
+
+</div>
+
+</div>
+
+</aside>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- RECOMMENDED PRODUCTS -->
+<section class="recommended-section">
+
+<div class="section-title">
+
+<h2>
+You May Also Like
+</h2>
+
+<a href="{{ url_for('products') }}">
+View All
+</a>
+
+</div>
+
+
+
+
+
+<div class="products-grid">
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/keyboard.jpg') }}" alt="Keyboard">
+
+<span class="sale-tag">
+Trending
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Gaming
+</div>
+
+<h3>
+Mechanical RGB Keyboard
+</h3>
+
+<p>
+Professional gaming keyboard with dynamic RGB lighting.
+</p>
+
+<div class="price-row">
+<h4>$89</h4>
+<small>$129</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/phone1.jpg') }}" alt="Phone">
+
+
+<span class="sale-tag">
+Hot
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Mobiles
+</div>
+
+<h3>
+Nova Ultra X Pro
+</h3>
+
+<p>
+Flagship mobile innovation built for creators.
+</p>
+
+<div class="price-row">
+<h4>$999</h4>
+<small>$1,299</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/chair.jpg') }}" alt="Chair">
+
+<span class="sale-tag">
+Premium
+</span>
+
+</div>
+
+<div class="product-info">
+
+<div class="product-category">
+Furniture
+</div>
+
+<h3>
+Nova Gaming Chair
+</h3>
+
+<p>
+Luxury ergonomic chair for elite gaming setups.
+</p>
+
+<div class="price-row">
+<h4>$189</h4>
+<small>$240</small>
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+
+<div class="newsletter-content">
+
+<h2>
+Stay Updated
+</h2>
+
+<p>
+Get exclusive offers, premium launches and flash sale updates.
+</p>
+
+<form>
+
+<input 
+type="email" 
+placeholder="Enter your email"
+>
+
+<button type="submit">
+Subscribe
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="en">
+<body>
+
+    {% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='css/products.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- BREADCRUMB -->
+
+<div class="breadcrumb-content">
+
+<a href="{{ url_for('index') }}">Home</a>
+
+<i class="fa-solid fa-angle-right"></i>
+
+<span>Products</span>
+
+</div>
+
+
+
+<!-- PRODUCTS LAYOUT -->
+<section class="products-layout">
+
+    <!-- FILTER TOGGLE BUTTON -->
+    <button class="filter-toggle" id="filterToggle">
+        ☰ Filters
+    </button>
+
+    <!-- FILTER SIDEBAR -->
+    <aside class="filter-sidebar" id="filterSidebar">
+
+        <div class="filter-header">
+            <h2>Filters</h2>
+
+            <button class="close-filters" id="closeFilters">
+                ✕
+            </button>
+        </div>
+
+        <button class="clear-btn">
+            Clear All
+        </button>
+
+        <br><br>
+
+        <!-- SEARCH FILTER -->
+        <div class="filter-group">
+
+            <h3>Search</h3>
+
+            <div class="filter-search">
+                <input type="text" placeholder="Search products...">
+            </div>
+
+        </div>
+
+        <!-- CATEGORY FILTER -->
+        <div class="filter-group">
+
+            <h3>Categories</h3>
+
+            <div class="filter-options">
+
+                <label><input type="checkbox"> Gaming</label><br>
+                <label><input type="checkbox"> Electronics</label><br>
+                <label><input type="checkbox"> Fashion</label><br>
+                <label><input type="checkbox"> Beauty</label><br>
+                <label><input type="checkbox"> Books</label><br>
+                <label><input type="checkbox"> Kitchen</label>
+
+            </div>
+
+        </div>
+
+        <!-- PRICE RANGE -->
+        <div class="filter-group">
+
+            <h3>Price Range</h3>
+
+            <div class="price-range">
+
+                <input type="range" min="0" max="5000" value="2500">
+
+                <div class="price-values">
+                    <span>$0</span>
+                    <span>$2500</span>
+                    <span>$5000</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- AVAILABILITY -->
+        <div class="filter-group">
+
+            <h3>Availability</h3>
+
+            <div class="filter-options">
+
+                <label><input type="checkbox"> In Stock</label><br>
+                <label><input type="checkbox"> Fast Delivery</label><br>
+                <label><input type="checkbox"> Free Shipping</label>
+
+            </div>
+
+        </div>
+
+        <!-- RATINGS -->
+        <div class="filter-group">
+
+            <h3>Ratings</h3>
+
+            <div class="ratings-filter">
+
+                <label><input type="radio" name="rating"> ★★★★★</label><br>
+                <label><input type="radio" name="rating"> ★★★★☆</label><br>
+                <label><input type="radio" name="rating"> ★★★☆☆</label>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+<!-- PRODUCTS CONTENT -->
+<div class="products-content"></div>
+
+
+<!-- TOP BAR -->
+<div class="products-toolbar">
+
+<div>
+<h2>
+All Products
+</h2>
+
+<p>
+Showing 1 - 24 of 50,000 products
+</p>
+</div>
+
+
+<div class="toolbar-actions">
+
+<select class="sort-select" aria-label="Sort Products">
+
+    <option value="featured">Featured</option>
+    <option value="newest">Newest</option>
+    <option value="low-high">Price Low To High</option>
+    <option value="high-low">Price High To Low</option>
+    <option value="best-selling">Best Selling</option>
+
+</select>
+
+</div>
+</div>
+
+
+
+<!-- PRODUCTS GRID -->
+<div class="products-grid">
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+    <div class="product-image">
+
+        <img 
+        src="{{ url_for('static', filename='images/products/headphone.png') }}"
+        alt="Nova X Headphones"
+        >
+
+        <span class="product-badge">
+            -45%
+        </span>
+
+        <button 
+        class="wishlist-btn"
+        aria-label="Add Nova X Headphones to wishlist"
+        >
+            <i class="fa-regular fa-heart"></i>
+        </button>
+
+        <div class="product-overlay">
+
+            <div class="overlay-actions">
+
+                <button aria-label="Quick view Nova X Headphones">
+                    <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button aria-label="Compare Nova X Headphones">
+                    <i class="fa-solid fa-code-compare"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="product-info">
+
+        <span class="product-category">
+            Electronics
+        </span>
+
+        <h3>
+            Nova X Headphones
+        </h3>
+
+        <p>
+            Premium immersive audio built for gaming, music and productivity.
+        </p>
+
+        <div class="product-rating">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <span>
+                (2,345)
+            </span>
+
+        </div>
+
+        <div class="product-footer">
+
+            <div class="product-price">
+
+                <strong>$129</strong>
+
+                <span>$249</span>
+
+            </div>
+
+            <button 
+            class="add-cart-btn"
+            aria-label="Add Nova X Headphones to cart"
+            >
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/jacket.png') }}" alt="Jacket Cover">
+
+<span class="sale-badge">
+-30%
+</span>
+
+</div>
+
+
+<div class="product-details">
+
+<span class="product-category">
+Gaming
+</span>
+
+<h3>
+Mechanical Keyboard
+</h3>
+
+<p>
+Ultra-responsive RGB gaming keyboard with premium switches.
+</p>
+
+<div class="product-rating">
+
+<div class="stars">
+★★★★★
+</div>
+
+<span>
+(1,244)
+</span>
+
+</div>
+
+<div class="product-bottom">
+
+<div class="price">
+
+<h4>$89</h4>
+<small>$120</small>
+
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img 
+src="{{ url_for('static', filename='images/products/watch.jpg') }}"
+alt="Watch"
+>
+
+<span class="sale-badge">
+-50%
+</span>
+
+</div>
+
+
+<div class="product-details">
+
+<span class="product-category">
+Mobiles
+</span>
+
+<h3>
+Nova Smart Watch
+</h3>
+
+<p>
+Track fitness, health, productivity and lifestyle seamlessly.
+</p>
+
+<div class="product-rating">
+
+<div class="stars">
+★★★★★
+</div>
+
+<span>
+(3,780)
+</span>
+
+</div>
+
+<div class="product-bottom">
+
+<div class="price">
+
+<h4>$159</h4>
+<small>$310</small>
+
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img 
+src="{{ url_for('static', filename='images/products/chair.jpg') }}"
+alt="Chair"
+>
+
+<span class="sale-badge">
+-20%
+</span>
+
+</div>
+
+
+<div class="product-details">
+
+<span class="product-category">
+Gaming
+</span>
+
+<h3>
+Gaming Chair
+</h3>
+
+<p>
+Ergonomic premium comfort built for elite performance.
+</p>
+
+<div class="product-rating">
+
+<div class="stars">
+★★★★★
+</div>
+
+<span>
+(1,022)
+</span>
+
+</div>
+
+<div class="product-bottom">
+
+<div class="price">
+
+<h4>$189</h4>
+<small>$240</small>
+
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img 
+src="{{ url_for('static', filename='images/products/laptop.jpg') }}"
+alt="Laptop"
+>
+<span class="sale-badge">
+NEW
+</span>
+
+</div>
+
+
+<div class="product-details">
+
+<span class="product-category">
+Electronics
+</span>
+
+<h3>
+Nova Creator Laptop
+</h3>
+
+<p>
+High-performance workstation for creators and developers.
+</p>
+
+<div class="product-rating">
+
+<div class="stars">
+★★★★★
+</div>
+
+<span>
+(912)
+</span>
+
+</div>
+
+<div class="product-bottom">
+
+<div class="price">
+
+<h4>$1499</h4>
+<small>$1799</small>
+
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img 
+src="{{ url_for('static', filename='images/products/shoes.jpg') }}"
+alt="Shoes"
+>
+
+<span class="sale-badge">
+HOT
+</span>
+
+</div>
+
+
+<div class="product-details">
+
+<span class="product-category">
+Fashion
+</span>
+
+<h3>
+Urban Street Sneakers
+</h3>
+
+<p>
+Modern luxury streetwear sneakers with premium comfort.
+</p>
+
+<div class="product-rating">
+
+<div class="stars">
+★★★★★
+</div>
+
+<span>
+(5,212)
+</span>
+
+</div>
+
+<div class="product-bottom">
+
+<div class="price">
+
+<h4>$99</h4>
+<small>$140</small>
+
+</div>
+
+<button class="add-cart-btn">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- PAGINATION -->
+<div class="pagination">
+
+<button class="active" name="page" value="1">
+1
+</button>
+
+<button name="page" value="2">
+2
+</button>
+
+<button name="page" value="3">
+3
+</button>
+
+<button name="page" value="4">
+4
+</button>
+
+<button name="page" value="5">
+5
+</button>
+
+</div>
+
+</section>
+
+
+
+<!-- QUICK VIEW MODAL -->
+<div class="quick-view-modal">
+
+<div class="quick-view-content">
+
+<div class="quick-view-grid">
+
+<div class="quick-image">
+
+<img
+src="{{ url_for('static', filename='images/products/headphone.jpg') }}"
+alt="Quick View"
+>
+
+</div>
+
+
+<div class="quick-details">
+
+<span class="quick-category">
+Electronics
+</span>
+
+<h2>
+Nova X Headphones
+</h2>
+
+<div class="quick-rating">
+★★★★★
+<span>(2,345 Reviews)</span>
+</div>
+
+<h3>
+$129
+</h3>
+
+<p>
+Premium immersive audio system built for gaming, productivity and entertainment.
+</p>
+
+<div class="quick-actions">
+
+<button class="primary-btn">
+Add To Cart
+</button>
+
+<button class="secondary-btn">
+View Details
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+
+<h3>
+Your Cart
+</h3>
+
+</div>
+
+
+<div class="cart-items">
+
+<div class="cart-item">
+
+<img 
+src="{{ url_for('static', filename='images/products/headphone.jpg') }}"
+alt="item"
+>
+
+<div>
+
+<h4>
+Nova X Headphones
+</h4>
+
+<p>
+$129
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="cart-footer">
+
+<h4>
+Total: $129
+</h4>
+
+<a href="{{ url_for('cart') }}">
+Checkout
+</a>
+
+</div>
+
+</div>
+
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/products.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+
+{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,710 @@
+<!doctype html>
+
+<html lang="en">
+
+<body>
+{% extends "base.html" %}
+
+
+{% block styles %}
+
+<link rel="stylesheet"
+
+href="{{ url_for('static', filename='css/home.css') }}">
+
+{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<section class="category-hero beauty-hero">
+
+<div class="category-hero-overlay">
+
+<div class="hero-badge">
+PREMIUM BEAUTY EXPERIENCE
+</div>
+
+<h1>
+Luxury Beauty & Wellness Essentials
+</h1>
+
+<p>
+Discover world-class skincare, modern beauty products, self-care essentials, and premium wellness collections.
+</p>
+
+<div class="hero-actions">
+
+<a href="{{ url_for('makeups') }}" class="primary-btn">
+Explore Beauty
+</a>
+
+<a href="{{ url_for('deals') }}" class="secondary-btn">
+View Offers
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURE STRIP -->
+<section class="feature-strip">
+
+<div class="feature-item">
+<i class="fa-solid fa-leaf"></i>
+
+<div>
+<h4>Organic Ingredients</h4>
+<p>Natural wellness formulations</p>
+</div>
+
+</div>
+
+
+<div class="feature-item">
+<i class="fa-solid fa-star"></i>
+
+<div>
+<h4>Premium Brands</h4>
+<p>Trusted luxury collections</p>
+</div>
+
+</div>
+
+
+<div class="feature-item">
+<i class="fa-solid fa-heart"></i>
+
+<div>
+<h4>Self Care Focused</h4>
+<p>Designed for modern wellness</p>
+</div>
+
+</div>
+
+
+<div class="feature-item">
+<i class="fa-solid fa-truck-fast"></i>
+
+<div>
+<h4>Fast Delivery</h4>
+<p>Secure global shipping</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MAIN PRODUCTS LAYOUT -->
+<section class="products-layout" id="beauty-products">
+
+<!-- SIDEBAR -->
+<aside class="filters-sidebar">
+
+<div class="filter-box">
+
+<h3>Beauty Categories</h3>
+
+<ul class="filter-links">
+<li><a href="{{ url_for('skincares') }}">Skincare</a></li>
+<li><a href="{{ url_for('makeups') }}">Makeup</a></li>
+<li><a href="{{ url_for('haircare') }}">Haircare</a></li>
+<li><a href="{{ url_for('fragrances') }}">Fragrance</a></li>
+<li><a href="{{ url_for('wellness') }}">Wellness</a></li>
+<li><a href="{{ url_for('luxury_beauty') }}">Luxury Beauty</a></li>
+</ul>
+
+</div>
+
+
+<div class="filter-box">
+
+<h3>Price Range</h3>
+
+<div class="price-slider">
+<input type="range" min="10" max="1000">
+</div>
+
+<div class="price-values">
+<span>$10</span>
+<span>$1000+</span>
+</div>
+
+</div>
+
+
+<div class="filter-box">
+
+<h3>Brands</h3>
+
+<label><input type="checkbox"> Nova Glow</label>
+<label><input type="checkbox"> Pure Aura</label>
+<label><input type="checkbox"> Velvet Beauty</label>
+<label><input type="checkbox"> Luxe Skin</label>
+<label><input type="checkbox"> Bloom Care</label>
+
+</div>
+
+
+<div class="filter-box">
+
+<h3>Ratings</h3>
+
+<label><input type="checkbox"> ★★★★★</label>
+<label><input type="checkbox"> ★★★★☆ & Up</label>
+<label><input type="checkbox"> ★★★☆☆ & Up</label>
+
+</div>
+
+
+<div class="filter-box">
+
+<h3>Availability</h3>
+
+<label><input type="checkbox"> In Stock</label>
+<label><input type="checkbox"> Free Shipping</label>
+<label><input type="checkbox"> Limited Edition</label>
+
+</div>
+
+</aside>
+
+
+<!-- PRODUCTS -->
+<div class="products-content">
+
+<!-- TOPBAR -->
+<div class="products-topbar">
+
+<div>
+<h2>Beauty Collection</h2>
+<p>Showing 80+ premium beauty products</p>
+</div>
+
+<div class="topbar-actions">
+
+<select aria-label="Sort Beauty Products">
+<option>Sort By: Featured</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+<option>Newest Arrivals</option>
+<option>Best Sellers</option>
+</select>
+
+</div>
+
+</div>
+
+
+<!-- MINI BANNERS -->
+<section class="mini-banner-grid">
+
+<div class="mini-banner">
+
+<div>
+<h3>Luxury Skincare</h3>
+<p>Advanced beauty formulas.</p>
+</div>
+
+<i class="fa-solid fa-spa"></i>
+
+</div>
+
+
+<div class="mini-banner">
+
+<div>
+<h3>Beauty Essentials</h3>
+<p>Everyday self-care collection.</p>
+</div>
+
+<i class="fa-solid fa-heart"></i>
+
+</div>
+
+
+<div class="mini-banner">
+
+<div>
+<h3>Premium Wellness</h3>
+<p>Healthy beauty lifestyle.</p>
+</div>
+
+<i class="fa-solid fa-leaf"></i>
+
+</div>
+
+</section>
+
+
+<!-- PRODUCTS GRID -->
+<div class="products-grid">
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-badge">
+BESTSELLER
+</div>
+
+<div class="wishlist-btn">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+<a href="{{ url_for('product_details') }}">
+<img 
+src="{{ url_for('static', filename='images/products/skincare.jpg') }}" 
+alt="Skincare Set"
+>
+</a>
+
+<div class="product-info">
+
+<span class="product_category">
+SKINCARE
+</span>
+
+<h3>
+Nova Glow Skincare Kit
+</h3>
+
+<p>
+Hydration and radiance essentials.
+</p>
+
+<div class="rating-row">
+★★★★★
+<span>(1.2k)</span>
+</div>
+
+<div class="product-price">
+<span>$89</span>
+<small>$120</small>
+</div>
+
+<div class="product-actions">
+
+<button class="cart-action">
+<i class="fa-solid fa-cart-shopping"></i>
+Add To Cart
+</button>
+
+<button class="quick-view">
+Quick View
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-badge sale">
+-25%
+</div>
+
+<div class="wishlist-btn">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+<a href="{{ url_for('product_details') }}">
+<img 
+src="{{ url_for('static', filename='images/products/perfume.jpg') }}" 
+alt="Perfume"
+>
+</a>
+
+<div class="product-info">
+
+<span class="product_category">
+FRAGRANCE
+</span>
+
+<h3>
+Velvet Aura Perfume
+</h3>
+
+<p>
+Luxury long-lasting fragrance.
+</p>
+
+<div class="rating-row">
+★★★★★
+<span>(760)</span>
+</div>
+
+<div class="product-price">
+<span>$140</span>
+<small>$190</small>
+</div>
+
+<div class="product-actions">
+
+<button class="cart-action">
+<i class="fa-solid fa-cart-shopping"></i>
+Add To Cart
+</button>
+
+<button class="quick-view">
+Quick View
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="wishlist-btn">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+<a href="{{ url_for('product_details') }}">
+<img 
+src="{{ url_for('static', filename='images/products/makeup.jpg') }}" 
+alt="Makeup Kit"
+>
+</a>
+
+<div class="product-info">
+
+<span class="product-category">
+MAKEUP
+</span>
+
+<h3>
+Luxe Beauty Palette
+</h3>
+
+<p>
+Professional makeup essentials.
+</p>
+
+<div class="rating-row">
+★★★★☆
+<span>(510)</span>
+</div>
+
+<div class="product-price">
+<span>$75</span>
+<small>$99</small>
+</div>
+
+<div class="product-actions">
+
+<button class="cart-action">
+<i class="fa-solid fa-cart-shopping"></i>
+Add To Cart
+</button>
+
+<button class="quick-view">
+Quick View
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-badge">
+NEW
+</div>
+
+<div class="wishlist-btn">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+<a href="{{ url_for('product_details') }}">
+<img 
+src="{{ url_for('static', filename='images/products/haircare.jpg') }}" 
+alt="Haircare"
+>
+</a>
+
+<div class="product-info">
+
+<span class="product-category">
+HAIRCARE
+</span>
+
+<h3>
+Silk Repair Hair Serum
+</h3>
+
+<p>
+Healthy shine and nourishment.
+</p>
+
+<div class="rating-row">
+★★★★★
+<span>(430)</span>
+</div>
+
+<div class="product-price">
+<span>$45</span>
+<small>$60</small>
+</div>
+
+<div class="product-actions">
+
+<button class="cart-action">
+<i class="fa-solid fa-cart-shopping"></i>
+Add To Cart
+</button>
+
+<button class="quick-view">
+Quick View
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="wishlist-btn">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+<a href="{{ url_for('product_details') }}">
+<img 
+src="{{ url_for('static', filename='images/products/wellness.jpg') }}" 
+alt="Wellness"
+>
+</a>
+
+<div class="product-info">
+
+<span class="product_category">
+WELLNESS
+</span>
+
+<h3>
+Bloom Wellness Collection
+</h3>
+
+<p>
+Mind and body care essentials.
+</p>
+
+<div class="rating-row">
+★★★★★
+<span>(670)</span>
+</div>
+
+<div class="product-price">
+<span>$120</span>
+<small>$155</small>
+</div>
+
+<div class="product-actions">
+
+<button class="cart-action">
+<i class="fa-solid fa-cart-shopping"></i>
+Add To Cart
+</button>
+
+<button class="quick-view">
+Quick View
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-badge sale">
+-15%
+</div>
+
+<div class="wishlist-btn">
+<i class="fa-regular fa-heart"></i>
+</div>
+
+<a href="{{ url_for('product_details') }}">
+<img 
+src="{{ url_for('static', filename='images/products/facecream.jpg') }}" 
+alt="Face Cream"
+>
+</a>
+
+<div class="product-info">
+
+<span class="product-category">
+SKINCARE
+</span>
+
+<h3>
+Hydra Luxe Face Cream
+</h3>
+
+<p>
+Deep moisture and skin renewal.
+</p>
+
+<div class="rating-row">
+★★★★★
+<span>(890)</span>
+</div>
+
+<div class="product-price">
+<span>$65</span>
+<small>$82</small>
+</div>
+
+<div class="product-actions">
+
+<button class="cart-action">
+<i class="fa-solid fa-cart-shopping"></i>
+Add To Cart
+</button>
+
+<button class="quick-view">
+Quick View
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PAGINATION -->
+<div class="pagination">
+
+<button>2</button>
+<button>3</button>
+<button>4</button>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SHOWCASE -->
+<section class="category-showcase">
+
+<div class="showcase-content">
+
+<div>
+
+<span class="showcase-tag">
+SELF CARE REDEFINED
+</span>
+
+<h2>
+Elevate Your Everyday Beauty Routine
+</h2>
+
+<p>
+Experience luxury beauty solutions designed to inspire confidence, wellness, and premium self-care lifestyles.
+</p>
+
+<a href="{{ url_for('products') }}" class="primary-btn">
+Explore Marketplace
+</a>
+
+</div>
+
+<img 
+src="{{ url_for('static', filename='images/banners/beauty-banner.jpg') }}" 
+alt="Beauty Showcase"
+>
+
+</div>
+
+</section>
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+
+<h3>Your Cart</h3>
+
+</div>
+
+
+<div class="cart-items">
+
+<div class="cart-item">
+
+<img 
+src="{{ url_for('static', filename='images/products/skincare.jpg') }}" 
+alt="Skincare"
+>
+
+<div>
+<h4>Nova Glow Skincare Kit</h4>
+<p>$89</p>
+</div>
+
+</div>
+
+
+<div class="cart-item">
+
+<img 
+src="{{ url_for('static', filename='images/products/perfume.jpg') }}" 
+alt="Perfume"
+>
+
+<div>
+<h4>Velvet Aura Perfume</h4>
+<p>$140</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="cart-footer">
+
+<h4>Total: $229</h4>
+
+<a href="{{ url_for('cart') }}">Checkout</a>
+
+</div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/products.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

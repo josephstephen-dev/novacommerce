@@ -1,0 +1,552 @@
+<!doctype html>
+
+<html lang="en">
+
+<body>
+{% extends "base.html" %}
+
+
+{% block styles %}
+
+<link rel="stylesheet"
+
+href="{{ url_for('static', filename='css/home.css') }}">
+
+{% endblock %}
+{% block content %}
+
+<!-- BREADCRUMB -->
+<section class="breadcrumb-section">
+
+<div class="breadcrumb-content">
+
+<a href="{{ url_for('index') }}">Home</a>
+
+<i class="fa-solid fa-angle-right"></i>
+
+<span>Fashion</span>
+
+</div>
+
+</section>
+
+
+
+<!-- HERO -->
+<section class="fashion-hero">
+
+<div class="gaming-overlay">
+
+<div class="gaming-hero-content">
+
+<span class="hero-mini-badge">
+MODERN FASHION COLLECTION
+</span>
+
+<h1>
+Luxury Street wear Built For Modern Culture
+</h1>
+
+<p>
+Explore premium fashion collections, designer sneakers, luxury essentials and trend-setting outfits curated for the next generation.
+</p>
+
+<div class="hero-buttons">
+
+<a href="{{ url_for('fashion') }}" class="primary-btn">
+Shop Fashion
+</a>
+
+<a href="{{ url_for('deals') }}" class="secondary-btn">
+View Fashion Deals
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FASHION CATEGORIES -->
+<section class="categories-section">
+
+<div class="section-title">
+
+<h2>
+Trending Fashion Categories
+</h2>
+
+<a href="{{ url_for('products') }}">
+Explore All
+</a>
+
+</div>
+
+
+
+<div class="categories-grid">
+
+<a href="{{ url_for('fashion') }}" class="category-card fashion-card">
+
+<i class="fa-solid fa-shirt"></i>
+
+<h3>
+Street wear
+</h3>
+
+<p>
+Urban fashion & oversized essentials
+</p>
+
+</a>
+
+
+
+<a href="{{ url_for('fashion') }}" class="category-card fashion-card">
+
+<i class="fa-solid fa-shoe-prints"></i>
+
+<h3>
+Sneakers
+</h3>
+
+<p>
+Luxury & performance footwear
+</p>
+
+</a>
+
+
+
+<a href="{{ url_for('fashion') }}" class="category-card fashion-card">
+
+<i class="fa-solid fa-gem"></i>
+
+<h3>
+Luxury Collection
+</h3>
+
+<p>
+Premium designer selections
+</p>
+
+</a>
+
+
+
+<a href="{{ url_for('fashion') }}" class="category-card fashion-card">
+
+<i class="fa-solid fa-glasses"></i>
+
+<h3>
+Accessories
+</h3>
+
+<p>
+Watches, glasses & essentials
+</p>
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- FEATURED PRODUCTS -->
+<section class="flash-sales" id="fashionProducts">
+
+<div class="section-title">
+
+<h2>
+Trending Fashion Products
+</h2>
+
+<a href="{{ url_for('products') }}">
+See More
+</a>
+
+</div>
+
+
+
+<div class="products-grid">
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<span class="sale-tag">
+HOT
+</span>
+
+<img 
+src="{{ url_for('static', filename='images/products/shoes.jpg') }}"
+alt="Sneakers"
+>
+
+<h3>
+Urban Street Sneakers
+</h3>
+
+<p>
+Luxury comfort sneakers designed for modern lifestyle.
+</p>
+
+<div class="product-price">
+
+<span>
+$120
+</span>
+
+<small>
+$180
+</small>
+
+</div>
+
+<div class="product-rating">
+★★★★★
+<span>(5,244)</span>
+</div>
+
+<button>
+Add To Cart
+</button>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<span class="sale-tag">
+NEW
+</span>
+
+<img 
+src="{{ url_for('static', filename='images/products/jacket.jpg') }}"
+alt="Jacket"
+>
+
+<h3>
+Nova Oversized Jacket
+</h3>
+
+<p>
+Premium oversized streetwear statement jacket.
+</p>
+
+<div class="product-price">
+
+<span>
+$95
+</span>
+
+<small>
+$140
+</small>
+
+</div>
+
+<div class="product-rating">
+★★★★★
+<span>(2,109)</span>
+</div>
+
+<button>
+Add To Cart
+</button>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<span class="sale-tag">
+LIMITED
+</span>
+
+<img 
+src="{{ url_for('static', filename='images/products/watch.jpg') }}"
+alt="Watch"
+>
+
+<h3>
+Luxury Nova Watch
+</h3>
+
+<p>
+Elegant smart luxury watch with modern aesthetics.
+</p>
+
+<div class="product-price">
+
+<span>
+$249
+</span>
+
+<small>
+$360
+</small>
+
+</div>
+
+<div class="product-rating">
+★★★★★
+<span>(1,844)</span>
+</div>
+
+<button>
+Add To Cart
+</button>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<span class="sale-tag">
+TRENDING
+</span>
+
+<img 
+src="{{ url_for('static', filename='images/products/bag.jpg') }}"
+alt="Bag"
+>
+
+<h3>
+Premium Leather Bag
+</h3>
+
+<p>
+Modern luxury carry bag for professionals & creators.
+</p>
+
+<div class="product-price">
+
+<span>
+$159
+</span>
+
+<small>
+$230
+</small>
+
+</div>
+
+<div class="product-rating">
+★★★★★
+<span>(3,440)</span>
+</div>
+
+<button>
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FASHION SHOWCASE -->
+<section class="featured-banner fashion-showcase">
+
+<div class="featured-overlay">
+
+<h2>
+Premium Fashion Collection 2025
+</h2>
+
+<p>
+Experience luxury fashion aesthetics with premium fabrics, bold street culture and enterprise-level fashion curation.
+</p>
+
+<a href="{{ url_for('products') }}">
+Explore Collection
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- WHY CHOOSE -->
+<section class="reviews-section">
+
+<div class="section-title">
+
+<h2>
+Why Fashion Lovers Choose Nova
+</h2>
+
+</div>
+
+
+
+<div class="reviews-grid">
+
+
+<div class="review-card">
+
+<i class="fa-solid fa-fire"></i>
+
+<h3>
+Trending Collections
+</h3>
+
+<p>
+Stay ahead with curated fashion trends and luxury drops.
+</p>
+
+</div>
+
+
+
+<div class="review-card">
+
+<i class="fa-solid fa-crown"></i>
+
+<h3>
+Premium Brands
+</h3>
+
+<p>
+Original fashion products from trusted luxury creators.
+</p>
+
+</div>
+
+
+
+<div class="review-card">
+
+<i class="fa-solid fa-star"></i>
+
+<h3>
+Modern Style
+</h3>
+
+<p>
+Built for creators, influencers and fashion-forward culture.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+
+<div class="newsletter-content">
+
+<h2>
+Join The Fashion Community
+</h2>
+
+<p>
+Receive updates on new fashion drops, luxury collections and exclusive offers.
+</p>
+
+<form>
+
+<input 
+type="email"
+placeholder="Enter your email"
+>
+
+<button type="submit">
+Subscribe
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+
+<h3>
+Your Cart
+</h3>
+
+</div>
+
+
+
+<div class="cart-items">
+
+<div class="cart-item">
+
+<img 
+src="{{ url_for('static', filename='images/products/shoes.jpg') }}"
+alt="item"
+>
+
+<div>
+
+<h4>
+Urban Street Sneakers
+</h4>
+
+<p>
+$120
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="cart-footer">
+
+<h4>
+Total: $120
+</h4>
+
+<a href="{{ url_for('cart') }}">
+Checkout
+</a>
+
+</div>
+
+</div>
+
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/products.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

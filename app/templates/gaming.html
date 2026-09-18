@@ -1,0 +1,553 @@
+<!doctype html>
+
+<html lang="en">
+
+<body>
+{% extends "base.html" %}
+
+
+{% block styles %}
+
+<link rel="stylesheet"
+
+href="{{ url_for('static', filename='css/home.css') }}">
+
+{% endblock %}
+{% block content %}
+
+
+
+<!-- BREADCRUMB -->
+<section class="breadcrumb-section">
+
+<div class="breadcrumb-content">
+
+<a href="{{ url_for('index') }}">Home</a>
+
+<i class="fa-solid fa-angle-right"></i>
+
+<span>Gaming</span>
+
+</div>
+
+</section>
+
+
+
+<!-- HERO -->
+<section class="gaming-hero">
+
+<div class="gaming-overlay">
+
+<div class="gaming-hero-content">
+
+<span class="hero-mini-badge">
+ELITE GAMING EXPERIENCE
+</span>
+
+<h1>
+Build Your Ultimate Gaming Setup
+</h1>
+
+<p>
+Explore next-generation gaming consoles, RGB accessories, esports gear, streaming equipment and immersive technology.
+</p>
+
+<div class="hero-buttons">
+
+<a href="{{ url_for('gaming') }}" class="primary-btn">
+Shop Gaming
+</a>
+
+<a href="{{ url_for('deals') }}" class="secondary-btn">
+View Gaming Deals
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- GAMING CATEGORIES -->
+<section class="categories-section">
+
+<div class="section-title">
+
+<h2>
+Gaming Categories
+</h2>
+
+<a href="{{ url_for('products') }}">
+Explore All
+</a>
+
+</div>
+
+
+
+<div class="categories-grid">
+
+<a href="{{ url_for('gaming_consoles') }}" class="category-card gaming-card">
+
+<i class="fa-solid fa-gamepad"></i>
+
+<h3>
+Consoles
+</h3>
+
+<p>
+PlayStation, Xbox & Nintendo
+</p>
+
+</a>
+
+
+
+<a href="{{ url_for('gaming_accessories') }}" class="category-card gaming-card">
+
+<i class="fa-solid fa-keyboard"></i>
+
+<h3>
+Gaming Accessories
+</h3>
+
+<p>
+RGB keyboards, mice & gear
+</p>
+
+</a>
+
+
+
+<a href="{{ url_for('gaming_audio_streaming') }}" class="category-card gaming-card">
+
+<i class="fa-solid fa-headset"></i>
+
+<h3>
+Audio & Streaming
+</h3>
+
+<p>
+Headsets, mics & streaming kits
+</p>
+
+</a>
+
+
+
+<a href="{{ url_for('pc_components') }}" class="category-card gaming-card">
+
+<i class="fa-solid fa-microchip"></i>
+
+<h3>
+PC Components
+</h3>
+
+<p>
+High performance hardware
+</p>
+
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- FEATURED PRODUCTS -->
+<section class="flash-sales" id="gamingProducts">
+
+<div class="section-title">
+
+<h2>
+Trending Gaming Products
+</h2>
+
+<a href="{{ url_for('products') }}">
+See More
+</a>
+
+</div>
+
+
+
+<div class="products-grid">
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<span class="sale-tag">
+HOT
+</span>
+
+<img 
+src="{{ url_for('static', filename='images/products/controller.jpg') }}"
+alt="Controller"
+>
+
+<h3>
+Nova Elite Controller
+</h3>
+
+<p>
+Wireless competitive esports controller.
+</p>
+
+<div class="product-price">
+
+<span>
+$89
+</span>
+
+<small>
+$140
+</small>
+
+</div>
+
+<div class="product-rating">
+★★★★★
+<span>(1,244)</span>
+</div>
+
+<button>
+Add To Cart
+</button>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<span class="sale-tag">
+-35%
+</span>
+
+<img 
+src="{{ url_for('static', filename='images/products/keyboard.jpg') }}"
+alt="Keyboard"
+>
+
+<h3>
+Mechanical RGB Keyboard
+</h3>
+
+<p>
+Ultra-fast premium mechanical switches.
+</p>
+
+<div class="product-price">
+
+<span>
+$109
+</span>
+
+<small>
+$170
+</small>
+
+</div>
+
+<div class="product-rating">
+★★★★★
+<span>(3,102)</span>
+</div>
+
+<button>
+Add To Cart
+</button>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<span class="sale-tag">
+NEW
+</span>
+
+<img 
+src="{{ url_for('static', filename='images/products/headphone.jpg') }}"
+alt="Gaming Headset"
+>
+
+<h3>
+Nova X Gaming Headset
+</h3>
+
+<p>
+Immersive surround sound experience.
+</p>
+
+<div class="product-price">
+
+<span>
+$129
+</span>
+
+<small>
+$220
+</small>
+
+</div>
+
+<div class="product-rating">
+★★★★★
+<span>(5,442)</span>
+</div>
+
+<button>
+Add To Cart
+</button>
+
+</div>
+
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<span class="sale-tag">
+LIMITED
+</span>
+
+<img 
+src="{{ url_for('static', filename='images/products/chair.jpg') }}"
+alt="Gaming Chair"
+>
+
+<h3>
+Titan Gaming Chair
+</h3>
+
+<p>
+Premium ergonomic comfort for long sessions.
+</p>
+
+<div class="product-price">
+
+<span>
+$299
+</span>
+
+<small>
+$420
+</small>
+
+</div>
+
+<div class="product-rating">
+★★★★★
+<span>(2,009)</span>
+</div>
+
+<button>
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SETUP SHOWCASE -->
+<section class="featured-banner gaming-showcase">
+
+<div class="featured-overlay">
+
+<h2>
+Professional Streaming & Gaming Setup
+</h2>
+
+<p>
+Create the perfect next-generation battlestation with immersive lighting, premium hardware and creator-grade performance.
+</p>
+
+<a href="{{ url_for('products') }}">
+Explore Setup Gear
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- ESPORTS SECTION -->
+<section class="reviews-section">
+
+<div class="section-title">
+
+<h2>
+Why Gamers Choose Nova
+</h2>
+
+</div>
+
+
+
+<div class="reviews-grid">
+
+
+<div class="review-card">
+
+<i class="fa-solid fa-bolt"></i>
+
+<h3>
+Ultra Fast Delivery
+</h3>
+
+<p>
+Receive your gaming gear with premium worldwide shipping.
+</p>
+
+</div>
+
+
+
+<div class="review-card">
+
+<i class="fa-solid fa-shield"></i>
+
+<h3>
+Verified Hardware
+</h3>
+
+<p>
+Trusted original products from top gaming brands worldwide.
+</p>
+
+</div>
+
+
+
+<div class="review-card">
+
+<i class="fa-solid fa-trophy"></i>
+
+<h3>
+Esports Ready
+</h3>
+
+<p>
+Built for competitive performance and elite-level gameplay.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+
+<div class="newsletter-content">
+
+<h2>
+Join The Gaming Community
+</h2>
+
+<p>
+Get exclusive gaming deals, esports updates, and early access to new gaming drops.
+</p>
+
+<form>
+
+<input 
+type="email"
+placeholder="Enter your email"
+>
+
+<button type="submit">
+Subscribe
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+
+<h3>
+Your Cart
+</h3>
+
+</div>
+
+
+
+<div class="cart-items">
+
+<div class="cart-item">
+
+<img 
+src="{{ url_for('static', filename='images/products/controller.jpg') }}"
+alt="item"
+>
+
+<div>
+
+<h4>
+Nova Elite Controller
+</h4>
+
+<p>
+$89
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="cart-footer">
+
+<h4>
+Total: $89
+</h4>
+
+<a href="{{ url_for('cart') }}">
+Checkout
+</a>
+
+</div>
+
+</div>
+
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/products.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

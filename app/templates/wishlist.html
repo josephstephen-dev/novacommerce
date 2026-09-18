@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<body>
+
+    {% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='css/products.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+
+<!-- HERO -->
+<section class="page-hero">
+
+<div class="page-hero-content">
+
+<span class="hero-mini-title">
+YOUR SAVED COLLECTION
+</span>
+
+<h1>
+Wishlist
+</h1>
+
+<p>
+Keep track of premium products you love and return anytime to continue shopping.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- WISHLIST GRID -->
+<section class="products-page-section">
+
+<div class="section-title">
+<h2>Saved Products</h2>
+<p>Curated favorites saved to your account.</p>
+</div>
+
+
+<div class="products-grid">
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/hoodie.png') }}" alt="Hoodie">
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+Fashion
+</span>
+
+<h3>
+Premium Urban Hoodie
+</h3>
+
+<p>
+Minimal oversized premium hoodie for modern street wear styling.
+</p>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$89
+</div>
+
+<a href="{{ url_for('product_details') }}" class="primary-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/jacket.png') }}" alt="Jacket">
+
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+Fashion
+</span>
+
+<h3>
+Luxury Winter Jacket
+</h3>
+
+<p>
+Premium insulated jacket with elevated comfort and clean aesthetics.
+</p>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$149
+</div>
+
+<a href="{{ url_for('product_details') }}" class="primary-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT -->
+<div class="product-card">
+
+<div class="product-image">
+
+<img src="{{ url_for('static', filename='images/products/polo.png') }}" alt="Polo Shirt">
+
+</div>
+
+<div class="product-info">
+
+<span class="product-category">
+Fashion
+</span>
+
+<h3>
+Modern Polo Shirt
+</h3>
+
+<p>
+Elegant casual wear polo with premium soft cotton finish.
+</p>
+
+<div class="product-bottom">
+
+<div class="product-price">
+$64
+</div>
+
+<a href="{{ url_for('product_details') }}" class="primary-btn">
+View Product
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+
+<h3>Your Cart</h3>
+
+</div>
+
+
+<div class="cart-items">
+
+<div class="cart-item">
+
+<img src="{{ url_for('static', filename='images/products/hoodie.png') }}" alt="item">
+
+<div>
+<h4>Premium Hoodie</h4>
+<p>$89</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="cart-footer">
+
+<h4>Total: $89</h4>
+
+<a href="{{ url_for('cart') }}">
+Checkout
+</a>
+
+</div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

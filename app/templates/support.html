@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<body>
+
+    {% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='css/products.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- HERO -->
+<section class="page-hero">
+
+<div class="page-hero-content">
+
+<span class="hero-mini-title">
+24/7 CUSTOMER ASSISTANCE
+</span>
+
+<h1>
+Support Center
+</h1>
+
+<p>
+Need help with orders, delivery, payments or account support? Our premium support team is here to assist.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SUPPORT CONTENT -->
+<section class="products-page-section">
+
+<div class="support-grid">
+
+<!-- SUPPORT CARD -->
+<div class="support-card">
+
+<div class="support-icon">
+<i class="fa-solid fa-box"></i>
+</div>
+
+<h3>Track Orders</h3>
+
+<p>
+Monitor your delivery progress and shipment information in real-time.
+</p>
+
+<a href="{{ url_for('cart') }}" class="primary-btn">
+View Orders
+</a>
+
+</div>
+
+
+<!-- SUPPORT CARD -->
+<div class="support-card">
+
+<div class="support-icon">
+<i class="fa-solid fa-rotate-left"></i>
+</div>
+
+<h3>Returns & Refunds</h3>
+
+<p>
+Request returns, exchanges, and refunds with seamless processing.
+</p>
+
+<a href="#" class="primary-btn">
+Learn More
+</a>
+
+</div>
+
+
+<!-- SUPPORT CARD -->
+<div class="support-card">
+
+<div class="support-icon">
+<i class="fa-solid fa-credit-card"></i>
+</div>
+
+<h3>Payment Issues</h3>
+
+<p>
+Get assistance with failed payments, invoices, or billing concerns.
+</p>
+
+<a href="#" class="primary-btn">
+Get Help
+</a>
+
+</div>
+
+
+<!-- SUPPORT CARD -->
+<div class="support-card">
+
+<div class="support-icon">
+<i class="fa-solid fa-headset"></i>
+</div>
+
+<h3>Live Assistance</h3>
+
+<p>
+Connect instantly with our premium customer support specialists.
+</p>
+
+<a href="{{ url_for('chat') }}" class="primary-btn">
+Start Chat
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAQ -->
+<section class="faq-section">
+
+<div class="section-title">
+<h2>Frequently Asked Questions</h2>
+</div>
+
+<div class="faq-container">
+
+<div class="faq-item">
+<h3>How long does shipping take?</h3>
+<p>Standard shipping usually takes 3–7 business days depending on your region.</p>
+</div>
+
+<div class="faq-item">
+<h3>Can I return a product?</h3>
+<p>Yes. Products can be returned within 14 days after delivery.</p>
+</div>
+
+<div class="faq-item">
+<h3>How do I track my order?</h3>
+<p>You can monitor orders directly from your account dashboard or cart page.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+
+<h3>Your Cart</h3>
+</div>
+
+
+<div class="cart-items">
+
+<div class="cart-item">
+
+<img src="{{ url_for('static', filename='images/products/polo.png') }}" alt="item">
+
+<div>
+<h4>Modern Polo Shirt</h4>
+<p>$64</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="cart-footer">
+
+<h4>Total: $64</h4>
+
+<a href="{{ url_for('cart') }}">
+Checkout
+</a>
+
+</div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

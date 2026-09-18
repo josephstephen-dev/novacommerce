@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<body>
+
+    {% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<!-- PAGE HERO -->
+<section class="category-hero books-hero">
+
+<div class="category-hero-content">
+
+<span class="hero-badge">
+KNOWLEDGE & LEARNING HUB
+</span>
+
+<h1>
+Books That Expand Knowledge, Creativity & Success
+</h1>
+
+<p>
+Discover bestselling business books, technology guides, productivity resources, novels, and personal development collections curated for ambitious minds.
+</p>
+
+<div class="hero-buttons">
+<a href="{{ url_for('books') }}" class="primary-btn">
+Explore Books
+</a>
+
+<a href="{{ url_for('deals') }}" class="secondary-btn">
+View Deals
+</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUICK CATEGORIES -->
+<section class="quick-categories-section">
+
+<div class="section-title">
+<h2>Book Categories</h2>
+<a href="{{ url_for('products') }}">Explore All</a>
+</div>
+
+<div class="quick-categories-grid">
+
+<div class="quick-category-card">
+<i class="fa-solid fa-chart-line"></i>
+<h3>Business</h3>
+<p>Entrepreneurship & finance books</p>
+</div>
+
+<div class="quick-category-card">
+<i class="fa-solid fa-brain"></i>
+<h3>Self Growth</h3>
+<p>Mindset and productivity learning</p>
+</div>
+
+<div class="quick-category-card">
+<i class="fa-solid fa-laptop-code"></i>
+<h3>Technology</h3>
+<p>Programming & digital skills</p>
+</div>
+
+<div class="quick-category-card">
+<i class="fa-solid fa-book-open"></i>
+<h3>Novels</h3>
+<p>Immersive storytelling collections</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FEATURED BOOKS -->
+<section class="products-page-section" id="booksProducts">
+
+<div class="section-title">
+<h2>Bestselling Collections</h2>
+<a href="{{ url_for('cart') }}">Go To Cart</a>
+</div>
+
+<div class="products-grid-page">
+
+
+<!-- BOOK -->
+<div class="product-page-card">
+
+<div class="product-image-wrap">
+<img src="{{ url_for('static', filename='images/products/book-business.jpg') }}" alt="Business Book">
+
+
+<span class="sale-badge">Bestseller</span>
+</div>
+
+<div class="product-page-content">
+<span class="product-category">Business</span>
+
+<h3>The Future Entrepreneur</h3>
+
+<p>
+A powerful guide to building modern businesses, systems, and scalable wealth.
+</p>
+
+<div class="product-rating">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+<span>(1,421)</span>
+</div>
+
+<div class="product-price-row">
+<h4>$24</h4>
+<small>$39</small>
+</div>
+
+<div class="product-buttons-row">
+<a href="{{ url_for('product_details') }}" class="details-btn">
+Details
+</a>
+
+<button class="cart-add-btn">
+Add To Cart
+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- BOOK -->
+<div class="product-page-card">
+
+<div class="product-image-wrap">
+<img src="{{ url_for('static', filename='images/products/book-tech.jpg') }}" alt="Tech Book">
+
+<span class="sale-badge">Top Rated</span>
+</div>
+
+<div class="product-page-content">
+<span class="product-category">Technology</span>
+
+<h3>Modern Web Systems</h3>
+
+<p>
+Advanced frontend and backend architecture principles for modern developers.
+</p>
+
+<div class="product-rating">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<span>(981)</span>
+</div>
+
+<div class="product-price-row">
+<h4>$31</h4>
+<small>$45</small>
+</div>
+
+<div class="product-buttons-row">
+<a href="{{ url_for('product_details') }}" class="details-btn">
+Details
+</a>
+
+<button class="cart-add-btn">
+Add To Cart
+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- BOOK -->
+<div class="product-page-card">
+
+<div class="product-image-wrap">
+<img src="{{ url_for('static', filename='images/products/book-growth.jpg') }}" alt="Growth Book">
+
+<span class="sale-badge">Editor's Pick</span>
+</div>
+
+<div class="product-page-content">
+<span class="product-category">Self Growth</span>
+
+<h3>Mindset Rebuilt</h3>
+
+<p>
+Master discipline, focus, strategic thinking, and personal transformation.
+</p>
+
+<div class="product-rating">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-regular fa-star"></i>
+<span>(764)</span>
+</div>
+
+<div class="product-price-row">
+<h4>$19</h4>
+<small>$29</small>
+</div>
+
+<div class="product-buttons-row">
+<a href="{{ url_for('product_details') }}" class="details-btn">
+Details
+</a>
+
+<button class="cart-add-btn">
+Add To Cart
+</button>
+</div>
+
+</div>
+</div>
+
+
+<!-- BOOK -->
+<div class="product-page-card">
+
+<div class="product-image-wrap">
+<img src="{{ url_for('static', filename='images/products/book-fiction.jpg') }}" alt="Novel Book">
+
+<span class="sale-badge">New Arrival</span>
+</div>
+
+<div class="product-page-content">
+<span class="product-category">Fiction</span>
+
+<h3>Empire Of Shadows</h3>
+
+<p>
+An immersive futuristic thriller exploring ambition, power, and survival.
+</p>
+
+<div class="product-rating">
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star"></i>
+<i class="fa-solid fa-star-half-stroke"></i>
+<span>(513)</span>
+</div>
+
+<div class="product-price-row">
+<h4>$16</h4>
+<small>$24</small>
+</div>
+
+<div class="product-buttons-row">
+<a href="{{ url_for('product_details') }}" class="details-btn">
+Details
+</a>
+
+<button class="cart-add-btn">
+Add To Cart
+</button>
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- FEATURE BANNER -->
+<section class="gaming-feature-banner books-banner">
+<div class="gaming-banner-overlay">
+
+<h2>
+Fuel Your Mind With Premium Knowledge
+</h2>
+
+<p>
+Explore modern learning systems, business intelligence, creative storytelling, and technology resources.
+</p>
+
+<a href="{{ url_for('products') }}">
+Explore Marketplace
+</a>
+
+</div>
+</section>
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+
+<div class="newsletter-content">
+<h2>Join The Nova Readers Community</h2>
+<p>
+Receive curated reading recommendations, premium releases, and exclusive educational offers.
+</p>
+
+<form>
+<input type="email" placeholder="Enter your email">
+<button type="submit">Subscribe</button>
+</form>
+</div>
+
+</section>
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+<h3>Your Cart</h3>
+<button id="closeCart">
+<h3>close cart</h3>
+</button>
+</div>
+
+<div class="cart-items">
+
+<div class="cart-item">
+<img src="{{ url_for('static', filename='images/products/book-business.jpg') }}" alt="Business Book">
+<div>
+<h4>The Future Entrepreneur</h4>
+<p>$24</p>
+</div>
+</div>
+
+<div class="cart-item">
+<img src="{{ url_for('static', filename='images/products/book-tech.jpg') }}" alt="Tech Book">
+<div>
+<h4>Modern Web Systems</h4>
+<p>$31</p>
+</div>
+</div>
+
+</div>
+
+<div class="cart-footer">
+<h4>Total: $55</h4>
+<a href="{{ url_for('cart') }}">Checkout</a>
+</div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/products.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

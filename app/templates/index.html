@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<body>
+
+    {% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+
+<section class="hero-slider">
+
+    <!-- SLIDES -->
+    <div class="slide active">
+        <img src="{{ url_for('static', filename='images/banners/home-banner.png') }}" alt="home">
+    </div>
+
+    <div class="slide">
+        <img src="{{ url_for('static', filename='images/banners/premium-banner.png') }}" alt="home">
+    </div>
+
+    <div class="slide">
+        <img src="{{ url_for('static', filename='images/banners/bammer.png') }}" alt="home">
+    </div>
+
+    <div class="slide">
+        <img src="{{ url_for('static', filename='images/banners/bammer2.png') }}" alt="home">
+    </div>
+
+    <div class="slide">
+        <img src="{{ url_for('static', filename='images/banners/bammer3.png') }}" alt="home">
+    </div>
+
+    <div class="slide">
+        <img src="{{ url_for('static', filename='images/banners/bammer4.png') }}"  alt="home">
+    </div>
+
+    <div class="slide">
+        <img src="{{ url_for('static', filename='images/banners/bammer5.png') }}" alt="home">
+    </div>
+
+    <div class="slide">
+        <img src="{{ url_for('static', filename='images/banners/bammer6.png') }}" alt="home">
+    </div>
+
+    <div class="slide">
+        <img src="{{ url_for('static', filename='images/banners/bammer7.png') }}" alt="home">
+    </div>
+
+    <div class="slide">
+        <img src="{{ url_for('static', filename='images/banners/bammer8.png') }}" alt="home">
+    </div>
+
+    <div class="slide">
+        <img src="{{ url_for('static', filename='images/banners/bammer9.png') }}" alt="home">
+    </div>
+
+
+    <!-- NEXT BUTTON -->
+    <button class="next-slide" id="nextSlide">
+        ❯
+    </button>
+
+</section>
+
+<!-- PRODUCT CARDS -->
+<section class="cards-section">
+
+    <div class="product-card">
+        <h2>Gaming Accessories</h2>
+    </div>
+
+    <div class="product-card">
+        <h2>Fashion Deals</h2>
+    </div>
+
+    <div class="product-card">
+        <h2>Smart Devices</h2>
+    </div>
+
+    <div class="product-card">
+        <h2>Beauty Collection</h2>
+    </div>
+
+</section>
+
+
+<!-- TRENDING CATEGORIES -->
+<section class="categories-section">
+
+<div class="section-title">
+<h2>Trending Categories</h2>
+<a href="{{ url_for('products') }}">View All</a>
+</div>
+
+<div class="categories-grid">
+
+<div class="product-card">
+<a href="{{ url_for('gaming') }}" class="category-card gaming-card">
+<img src="{{ url_for('static', filename='images/categories/gaming_image.png') }}" alt="Jacket Cover">
+<h3>Gaming</h3>
+<p>Consoles, accessories & esports gear</p>
+</a>
+</div>
+
+<div class="product-card">
+<a href="{{ url_for('fashion') }}" class="category-card fashion-card">
+<img src="{{ url_for('static', filename='images/categories/fashion_image.png') }}" alt="Jacket Cover">
+<h3>Fashion</h3>
+<p>Modern street wear & luxury style</p>
+</a>
+</div>
+
+<div class="product-card">
+<a href="{{ url_for('electronics') }}" class="category-card electronics-card">
+<img src="{{ url_for('static', filename='images/categories/electronics_image.png') }}" alt="Jacket Cover">
+<h3>Electronics</h3>
+<p>Smart devices & gadgets</p>
+</a>
+</div>
+
+<div class="product-card">
+<a href="{{ url_for('beauty') }}" class="category-card beauty-card">
+<img src="{{ url_for('static', filename='images/categories/beauty_image.png') }}" alt="Beauty">
+<h3>Beauty</h3>
+<p>Wellness & skincare essentials</p>
+</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FLASH SALES -->
+<section class="flash-sales">
+
+<div class="section-title">
+<h2>Flash Sales</h2>
+<a href="{{ url_for('deals') }}">See More</a>
+</div>
+
+<div class="products-grid">
+
+<div class="product-card">
+<span class="sale-tag">-45%</span>
+<img src="{{ url_for('static', filename='images/products/flashsale_watch.png') }}" alt="Smart Watch">
+<h3>Smart Fitness Watch</h3>
+<p>Track your health, workouts, and daily activity with modern smart features.</p>
+<div class="product-price">
+<span>$90</span>
+<small>$320</small>
+</div>
+<button>Add To Cart</button>
+</div>
+
+<div class="product-card">
+<span class="sale-tag">-30%</span>
+<img src="{{ url_for('static', filename='images/products/headphone.png') }}" alt="Headphone">
+<h3>Wireless Noise-Canceling Headphones</h3>
+<p>Enjoy immersive sound, deep bass, and all-day comfort wherever you go.</p>
+<div class="product-price">
+<span>$84</span>
+<small>$120</small>
+</div>
+<button>Add To Cart</button>
+</div>
+
+<div class="product-card">
+<span class="sale-tag">-50%</span>
+<img src="{{ url_for('static', filename='images/products/controller.png') }}" alt="Game Controller">
+<h3>Pro Gaming Controller</h3>
+<p>Level up your gameplay with precision controls and fast response.</p>
+<div class="product-price">
+<span>$60</span>
+<small>$120</small>
+</div>
+<button>Add To Cart</button>
+</div>
+
+<div class="product-card">
+<span class="sale-tag">-20%</span>
+<img src="{{ url_for('static', filename='images/products/perfume.png') }}" alt="Perfume">
+<h3>Luxury Signature Perfume</h3>
+<p>Bold long-lasting fragrance designed for modern lifestyle.</p>
+<div class="product-price">
+<span>$639</span>
+<small>$799</small>
+</div>
+<button>Add To Cart</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURED COLLECTION -->
+<img src="{{ url_for('static', filename='images/banners/main-sale-banner.png') }}" alt="banner">
+
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+
+<div class="section-title">
+<h2>What Customers Say</h2>
+</div>
+
+<div class="reviews-grid">
+
+<div class="review-card">
+<p>
+“Absolutely my best online shopping store, smooth experiences always.”
+</p>
+
+<div class="review-user">
+<h4>Daniel Morgan</h4>
+<span>Verified Buyer</span>
+</div>
+</div>
+
+<div class="review-card">
+<p>
+“I think it's a new store and all their products are give this futuristic, premium feeling at very nice deals.”
+</p>
+
+<div class="review-user">
+<h4>Sophia Lee</h4>
+<span>Verified Buyer</span>
+</div>
+</div>
+
+<div class="review-card">
+<p>
+“Fastest delivery, didn't even had to do any stress, I'm loving it!”
+</p>
+
+<div class="review-user">
+<h4>Michael Carter</h4>
+<span>Verified Buyer</span>
+</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+
+<div class="newsletter-content">
+<h2>Stay Updated</h2>
+<p>
+Receive updates about new arrivals, premium offers, and exclusive deals.
+</p>
+
+<form>
+<input type="email" placeholder="Enter your email">
+<button type="submit">Subscribe</button>
+</form>
+</div>
+
+</section>
+
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+
+<div class="cart-header">
+<h3>Your Cart</h3>
+</div>
+
+<div class="cart-items">
+<div class="cart-item">
+<img src="{{ url_for('static', filename='images/categories/gadgets-category.png') }}" alt="item">
+<div>
+<h4>Nova X Headphones</h4>
+<p>$129</p>
+</div>
+</div>
+</div>
+
+<div class="cart-footer">
+<h4>Total: $129</h4>
+<a href="{{ url_for('cart') }}">Checkout</a>
+</div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/animations.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>
