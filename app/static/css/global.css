@@ -1084,3 +1084,54 @@ font-size:2rem;
 }
 
 }
+
+/* ===== COMPACT HEADER ===== */
+body{ padding-top:0 !important; }
+
+.header-top{ padding:10px 24px !important; gap:16px !important; }
+.logo-icon{ width:42px; height:42px; border-radius:14px; }
+.search-category select,
+.search-container input{ padding-top:10px; padding-bottom:10px; }
+.search-btn{ height:42px; }
+.theme-toggle,
+.cart-btn,
+.dropdown button{ height:42px !important; }
+.main-nav{ padding:0 24px 8px !important; }
+.main-nav a::after,
+.main-nav button::after{ bottom:-4px; }
+
+.hero-slider{ padding-top:12px !important; padding-bottom:24px !important; }
+
+/* Language menu opens rightward so it never goes off-screen */
+.language-dropdown .dropdown-content{
+  left:0;
+  right:auto;
+  min-width:180px;
+}
+
+/* Safety net: no dropdown can be wider than the screen */
+.dropdown-content{
+  max-width:calc(100vw - 32px);
+}
+
+.cart-close{
+  position:absolute;
+  top:22px;
+  right:22px;
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  background:rgba(255,140,26,.12);
+  color:var(--text);
+  font-size:1.7rem;
+  line-height:1;
+  cursor:pointer;
+  transition:.3s ease;
+  z-index:2;
+}
+
+.cart-close:hover{
+  background:var(--primary);
+  color:#fff;
+  transform:rotate(90deg);
+}
