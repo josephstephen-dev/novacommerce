@@ -1,27 +1,57 @@
-<!doctype html>
-<html lang="en">
-    {% extends "base.html" %}
+<!DOCTYPE html>
+{% extends "auth_base.html" %}
 
-{% block content %}
-    <h1>Sign In</h1>
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}<br>
-            {% for error in form.username.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}<br>
-            {% for error in form.password.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-        <p>{{ form.submit() }}</p>
-    </form>
+{% block form %}
+
+<div class="tabs">
+  <a class="tab-btn active" href="{{ url_for('login') }}">Login</a>
+  <a class="tab-btn" href="{{ url_for('register') }}">Sign Up</a>
+</div>
+
+<div class="form-box">
+
+  {% for category, message in get_flashed_messages(with_categories=true) %}
+    <div class="flash {{ category }}">{{ message }}</div>
+  {% endfor %}
+
+  <h2>Welcome Back</h2>
+  <p>Login to continue shopping on Nova.</p>
+
+  <form method="post" action="" novalidate>
+    {{ form.hidden_tag() }}
+
+    <div class="input-group">
+      <label for="username">Username</label>
+      <div class="input-wrapper">
+        <span>👤</span>
+        {{ form.username(id="username", placeholder="Enter your username") }}
+      </div>
+      {% for error in form.username.errors %}
+        <div class="error">{{ error }}</div>
+      {% endfor %}
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password</label>
+      <div class="input-wrapper">
+        <span>🔒</span>
+        {{ form.password(id="password", placeholder="Enter your password") }}
+      </div>
+      {% for error in form.password.errors %}
+        <div class="error">{{ error }}</div>
+      {% endfor %}
+    </div>
+
+    <div class="options">
+      <label class="checkbox">
+        {{ form.remember_me() }} Remember me
+      </label>
+      <a href="#" class="forgot">Forgot Password?</a>
+    </div>
+
+    <button type="submit" class="submit-btn">Login Account</button>
+  </form>
+
+</div>
+
 {% endblock %}
-</html>

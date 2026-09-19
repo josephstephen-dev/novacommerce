@@ -87,7 +87,7 @@ EN
 <div class="dropdown account-dropdown">
 <button>
 <i class="fa-regular fa-user"></i>
-Account
+{% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Account{% endif %}
 </button>
 
 <div class="dropdown-content account-panel">
@@ -95,6 +95,13 @@ Account
 <a href="{{ url_for('cart') }}">Orders</a>
 <a href="{{ url_for('wishlist') }}">Wishlist</a>
 <a href="{{ url_for('support') }}">Support</a>
+
+{% if current_user.is_authenticated %}
+<a href="{{ url_for('logout') }}">Logout</a>
+{% else %}
+<a href="{{ url_for('login') }}">Login</a>
+<a href="{{ url_for('register') }}">Create Account</a>
+{% endif %}
 </div>
 </div>
 
@@ -130,7 +137,7 @@ Cart
 <div class="sidebar" id="sidebar">
 
   <div class="sidebar-top">
-    <h2>Hello, Sign In</h2>
+    <h2>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Sign In{% endif %}</h2>
 
     <button class="close-btn" id="closeBtn">
       ✕
@@ -186,16 +193,12 @@ Cart
 </header>
 {% endif %}
 
-<script src="{{ url_for('static', filename='js/app.js') }}"></script>
-
 <!--The part that collect other html doc and render-->
 
 {% block content %}
 
 
 {% endblock %}
-
-    </body>
 
 
 {% if not hide_nav %}
@@ -272,4 +275,42 @@ Modern enterprise e-commerce ecosystem delivering premium digital shopping exper
 
 {% endif %}
 
+<!-- SCRIPTS: app.js loads once, after the page exists; page scripts follow -->
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+<!-- CART: close button, click-outside and Esc to close -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var drawer  = document.querySelector('.cart-drawer');
+  var overlay = document.querySelector('.cart-overlay');
+  if (!drawer) return;
+
+  function closeCart() {
+    drawer.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+  }
+
+  // Add a close button only if the drawer doesn't already have one
+  if (!drawer.querySelector('.cart-close, .cart-header button')) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cart-close';
+    btn.setAttribute('aria-label', 'Close cart');
+    btn.innerHTML = '&times;';
+    drawer.prepend(btn);
+  }
+
+  drawer.addEventListener('click', function (e) {
+    if (e.target.closest('.cart-close, .cart-header button')) closeCart();
+  });
+  if (overlay) overlay.addEventListener('click', closeCart);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeCart();
+  });
+});
+</script>
+
+{% block scripts %}{% endblock %}
+
+</body>
 </html>
